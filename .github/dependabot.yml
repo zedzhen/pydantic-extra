@@ -11,3 +11,9 @@ updates:
     schedule:
       interval: "daily"
       timezone: "Europe/Moscow"
+
+  - package-ecosystem: pre-commit
+    directory: "/"
+    schedule:
+      interval: "daily"
+      timezone: "Europe/Moscow"
