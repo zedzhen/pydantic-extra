@@ -18,6 +18,7 @@ source = "https://github.com/zedzhen/pydantic-extra"
 
 [project.optional-dependencies]
 db = ['sqlalchemy~=2.0']
+test = ['pytest~=9.0']
 dev = [
     'black~=26.5',
     'isort~=8.0',
@@ -27,6 +28,12 @@ dev = [
 
 [tool.setuptools.dynamic]
 version = {attr = "pydantic_extra.__version__"}
+
+[tool.pytest]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = ["--import-mode=importlib"]
+minversion = "9.0"
 
 [tool.black]
 line-length = 120
