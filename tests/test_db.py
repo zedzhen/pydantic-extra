@@ -64,12 +64,14 @@ def test_mysql(func, type_):
     assert obj.encoding == data["encoding"]
     assert obj.database == data["database"]
     _base_test(obj, AVAILABLE_PYMYSQL)
+    assert obj.library == "pymysql"
+    obj.library = "custom_lib"
+    assert obj.library == "custom_lib"
+    _base_test(obj, False)
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, Mysql.model_validate])
-@pytest.mark.parametrize("type_", ["mysql", "mariadb"])
-@pytest.mark.skipif(not AVAILABLE_PYMYSQL, reason="pymysql is not installed")
-def test_mysql_skip(func, type_):
+@pytest.mark.skipif(not AVAILABLE_PYMYSQL, reason="pymysql is not installed (don't full test `Mysql`)")
+def test_mysql_skip():
     pass
 
 
@@ -92,13 +94,10 @@ def test_mysql_default(func, type_):
     assert obj.encoding == "utf8mb4"
     assert obj.database == data["database"]
     _base_test(obj, AVAILABLE_PYMYSQL)
-
-
-@pytest.mark.parametrize("func", [ta.validate_python, Mysql.model_validate])
-@pytest.mark.parametrize("type_", ["mysql", "mariadb"])
-@pytest.mark.skipif(not AVAILABLE_PYMYSQL, reason="pymysql is not installed")
-def test_mysql_default_skip(func, type_):
-    pass
+    assert obj.library == "pymysql"
+    obj.library = "custom_lib"
+    assert obj.library == "custom_lib"
+    _base_test(obj, False)
 
 
 @pytest.mark.parametrize("func", [ta.validate_python, AnyDB.model_validate])

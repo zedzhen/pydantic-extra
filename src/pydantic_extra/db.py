@@ -58,12 +58,13 @@ class Mysql(DB):
     password: SecretStr
     encoding: str = "utf8mb4"
     database: str
+    _library: str = "pymysql"
 
     @cached_property
     def connect_str(self) -> str | URL:
         """строка для sqlalchemy.create_engine"""
         return URL.create(
-            f"mysql+pymysql",
+            f"mysql+{self._library}",
             self.login,
             self.password.get_secret_value(),
             self.host,
@@ -71,6 +72,14 @@ class Mysql(DB):
             self.database,
             {"charset": self.encoding},
         )
+
+    @property
+    def library(self) -> str:
+        return self._library
+
+    @library.setter
+    def library(self, value: str):
+        self._library = value
 
 
 class AnyDB(DB):
