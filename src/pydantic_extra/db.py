@@ -6,6 +6,7 @@ from pathlib import Path
 
 from pydantic import BaseModel, Field, SecretStr
 from sqlalchemy import URL, Engine, create_engine, event
+from sqlalchemy.engine.interfaces import DBAPIConnection
 from sqlalchemy.orm import Session
 from typing_extensions import Literal, TypeAlias
 
@@ -21,14 +22,15 @@ class DB(BaseModel, ABC):
     @cached_property
     def engine(self) -> Engine:
         """Создаёт sqlalchemy.Engine"""
-        return create_engine(self.connect_str)
+        return self.setup(create_engine(self.connect_str))
 
     def session(self) -> Session:
         """Создаёт sqlalchemy.Session"""
         return Session(self.engine)
 
-    def setup(self):
-        """Подготавливает sqlalchemy для работы с данным диалектом"""
+    def setup(self, engine: Engine) -> Engine:
+        """Настраивает экземпляр sqlalchemy.Engine для работы с данным диалектом"""
+        return engine
 
 
 class SQLite(DB):
@@ -40,14 +42,17 @@ class SQLite(DB):
         """строка для sqlalchemy.create_engine"""
         return URL.create("sqlite", database=str(self.path.absolute()))
 
-    def setup(self):
-        """Подготавливает sqlalchemy для работы с sqlite"""
+    def setup(self, engine: Engine) -> Engine:
+        """Настраивает экземпляр sqlalchemy.Engine для работы с данным диалектом"""
 
-        @event.listens_for(Engine, "connect")
-        def set_sqlite_pragma(dbapi_connection, connection_record):
+        @event.listens_for(engine, "connect")
+        def set_sqlite_pragma(dbapi_connection: DBAPIConnection, connection_record):
             cursor = dbapi_connection.cursor()
             cursor.execute("PRAGMA foreign_keys=ON")
+            dbapi_connection.commit()
             cursor.close()
+
+        return engine
 
 
 class Mysql(DB):
