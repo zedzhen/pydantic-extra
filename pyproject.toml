@@ -27,7 +27,7 @@ dev = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "pydantic_extra.__version__"}
+version = { attr = "pydantic_extra.__version__" }
 
 [tool.pytest]
 pythonpath = ["src"]
