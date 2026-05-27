@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 __all__ = ['DB', 'SQLite', 'Mysql', 'AnyDB', 'T_DB']
 
 from abc import ABC, abstractmethod
@@ -9,7 +7,7 @@ from pathlib import Path
 from pydantic import BaseModel, Field, SecretStr
 from sqlalchemy import create_engine, event, URL, Engine
 from sqlalchemy.orm import Session
-from typing_extensions import Literal, TypeAlias, Union
+from typing_extensions import Literal, TypeAlias
 
 
 class DB(BaseModel, ABC):
@@ -79,4 +77,4 @@ class AnyDB(DB):
         return self.str_
 
 
-T_DB: TypeAlias = Union[SQLite, Mysql, AnyDB]
+T_DB: TypeAlias = SQLite | Mysql | AnyDB
