@@ -19,9 +19,19 @@ source = "https://github.com/zedzhen/pydantic-extra"
 [project.optional-dependencies]
 db = ['sqlalchemy~=2.0']
 dev = [
+    'black~=26.5',
+    'isort~=8.0',
     "build==1.5.*",
     "pre-commit~=4.6",
 ]
 
 [tool.setuptools.dynamic]
 version = {attr = "pydantic_extra.__version__"}
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+combine_as_imports = true

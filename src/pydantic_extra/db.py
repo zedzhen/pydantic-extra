@@ -1,11 +1,11 @@
-__all__ = ['DB', 'SQLite', 'Mysql', 'AnyDB', 'T_DB']
+__all__ = ["DB", "SQLite", "Mysql", "AnyDB", "T_DB"]
 
 from abc import ABC, abstractmethod
 from functools import cached_property
 from pathlib import Path
 
 from pydantic import BaseModel, Field, SecretStr
-from sqlalchemy import create_engine, event, URL, Engine
+from sqlalchemy import URL, Engine, create_engine, event
 from sqlalchemy.orm import Session
 from typing_extensions import Literal, TypeAlias
 
@@ -62,9 +62,15 @@ class Mysql(DB):
     @cached_property
     def connect_str(self) -> str | URL:
         """строка для sqlalchemy.create_engine"""
-        return URL.create(f"mysql+pymysql", self.login, self.password.get_secret_value(), self.host, self.port,
-                          self.database,
-                          {"charset": self.encoding})
+        return URL.create(
+            f"mysql+pymysql",
+            self.login,
+            self.password.get_secret_value(),
+            self.host,
+            self.port,
+            self.database,
+            {"charset": self.encoding},
+        )
 
 
 class AnyDB(DB):

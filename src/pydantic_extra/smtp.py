@@ -1,4 +1,4 @@
-__all__ = ['MailServer']
+__all__ = ["MailServer"]
 
 from smtplib import SMTP, SMTP_SSL
 
@@ -14,7 +14,7 @@ class MailServer(BaseModel):
     smtp_password: SecretStr
     from_addr: str = None
 
-    @model_validator(mode='after')
+    @model_validator(mode="after")
     def checks(self) -> Self:
         if self.from_addr is None:
             self.from_addr = self.smtp_login
