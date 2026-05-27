@@ -20,6 +20,9 @@
 Требует дополнительные зависимости `db` (sqlalchemy) \
 `pip install pydantic-extra[db]`
 
+Mysql требует дополнительную зависимость `db_full` (PyMySQL) (или иную библиотеку, с заменой Mysql._library) \
+`pip install pydantic-extra[db_full]`
+
 ## модели DB(базовая модель), SQLite, Mysql(в т.ч. для MariaDB), AnyDB
 
 ### SQLite
@@ -41,10 +44,50 @@
 * `encoding` - кодировка (по умолчанию: `utf8mb4`)
 * `database` - имя БД
 
+Вы можете изменить `_library` на уровне класса или `library` для экземпляра, чтобы изменить используемую библиотеку
+
 ### DB
 
 * `connect_str()` - возвращает строку подключения для sqlalchemy или sqlalchemy.URL
-* `setup()` - настраивает sqlalchemy для работы с данным диалектом
+* `setup(engine)` - настраивает экземпляр sqlalchemy.Engine для работы с данным диалектом
+
+# pydantic-extra.adb
+
+Требует дополнительные зависимости `db` (sqlalchemy) \
+`pip install pydantic-extra[db]`
+
+Mysql,SQLite требует дополнительную зависимость `adb_full` (aiomysql, aiosqlite) (или иные библиотеки, с заменой AsyncMysql._library, AsyncSqlite._library) \
+`pip install pydantic-extra[adb_full]`
+
+## модели AsyncDB(базовая модель), AsyncSQLite, AsyncMysql(в т.ч. для MariaDB), AsyncAnyDB
+
+### AsyncSQLite
+
+* `type` - `sqlite`
+* `path` - путь до БД
+
+Вы можете изменить `_library` на уровне класса или `library` для экземпляра, чтобы изменить используемую библиотеку
+
+### AsyncAnyDB
+
+* `type` - `any`
+* `str` - строка подключения для sqlalchemy
+
+### AsyncMysql
+
+* `type` - `mysql` или `mariadb`
+* `host` - хост
+* `port` - порт (по умолчанию: 3306)
+* `login`/`password` - данные для авторизации
+* `encoding` - кодировка (по умолчанию: `utf8mb4`)
+* `database` - имя БД
+
+Вы можете изменить `_library` на уровне класса или `library` для экземпляра, чтобы изменить используемую библиотеку
+
+### AsyncDB
+
+* `connect_str()` - возвращает строку подключения для sqlalchemy или sqlalchemy.URL
+* `setup(engine)` - настраивает экземпляр sqlalchemy.ext.asyncio.AsyncEngine для работы с данным диалектом
 
 ## использование
 
