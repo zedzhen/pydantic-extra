@@ -18,6 +18,11 @@ source = "https://github.com/zedzhen/pydantic-extra"
 
 [project.optional-dependencies]
 db = ['sqlalchemy~=2.0']
+db_full = ['pymysql~=1.1,!=1.1.0']
+adb_full = [
+    'aiosqlite>=0.20,<0.23',
+    'aiomysql~=0.3.0',
+]
 test = ['pytest~=9.0']
 dev = [
     'black~=26.5',
