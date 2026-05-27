@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=81"]
 
 [project]
 name = "pydantic-extra"
@@ -10,7 +10,7 @@ license = { file = "LICENSE" }
 authors = [
     { name = "Ярыкин Евгений", email = "pypi@zedzhen.ru" }
 ]
-dependencies = ['pydantic~=2.10', 'typing-extensions~=4.10,!=4.12.0']
+dependencies = ['pydantic~=2.10', 'typing-extensions~=4.14']
 dynamic = ["version"]
 
 [project.urls]
