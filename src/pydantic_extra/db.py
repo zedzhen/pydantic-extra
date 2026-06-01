@@ -1,6 +1,6 @@
 __all__ = ["DB", "SQLite", "Mysql", "AnyDB", "T_DB"]
 
-from abc import ABC
+from abc import ABC, abstractmethod
 from functools import cached_property
 
 from pydantic import BaseModel
@@ -12,6 +12,11 @@ from pydantic_extra._db import AnyBase, DBBase, MysqlBase, SQLiteBase
 
 
 class DB(BaseModel, DBBase, ABC):
+    @cached_property
+    @abstractmethod
+    def connect_str(self) -> str | URL:
+        """строка для sqlalchemy.create_engine"""
+
     @cached_property
     def engine(self) -> Engine:
         """Создаёт sqlalchemy.Engine"""

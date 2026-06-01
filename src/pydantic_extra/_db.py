@@ -30,11 +30,6 @@ class CustomLibraryMixin:
 class DBBase(ABC):
     type: str
 
-    @cached_property
-    @abstractmethod
-    def connect_str(self) -> str | URL:
-        """строка для sqlalchemy.create_engine"""
-
 
 class SQLiteBase(DBBase, ABC):
     type: Literal["sqlite"]
