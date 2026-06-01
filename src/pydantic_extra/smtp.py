@@ -28,6 +28,6 @@ class MailServer(BaseModel):
             cls = SMTP
         return cls(self.smtp_host, self.smtp_port)
 
-    def login(self, smtp: SMTP):
+    def login(self, smtp: SMTP) -> None:
         """Выполняет авторизацию для SMTP подключения"""
         smtp.login(self.smtp_login, self.smtp_password.get_secret_value())

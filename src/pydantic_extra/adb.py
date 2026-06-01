@@ -14,11 +14,11 @@ from pydantic_extra._db import AnyBase, CustomLibraryMixin, DBBase, MysqlBase, S
 class AsyncDB(BaseModel, DBBase, ABC):
     @cached_property
     def engine(self) -> AsyncEngine:
-        """Создаёт sqlalchemy.AsyncEngine"""
+        """Создаётsqlalchemy.ext.asyncio.AsyncEngine"""
         return self.setup(create_async_engine(self.connect_str))
 
     def session(self) -> AsyncSession:
-        """Создаёт sqlalchemy.Session"""
+        """Создаёт sqlalchemy.ext.asyncio.AsyncSession"""
         return AsyncSession(self.engine)
 
     def setup(self, engine: AsyncEngine) -> AsyncEngine:
@@ -33,7 +33,7 @@ class AsyncSQLite(AsyncDB, SQLiteBase, CustomLibraryMixin, default_library="aios
         return URL.create(f"sqlite+{self.library}", database=str(self.path.absolute()))
 
     def setup(self, engine: AsyncEngine) -> AsyncEngine:
-        """Настраивает экземпляр sqlalchemy.Engine для работы с sqlite"""
+        """Настраивает экземпляр sqlalchemy.ext.asyncio.AsyncEngine для работы с sqlite"""
         event.listen(engine.sync_engine, "connect", self._set_pragma)
         return engine
 
