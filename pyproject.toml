@@ -10,7 +10,10 @@ license = { file = "LICENSE" }
 authors = [
     { name = "Ярыкин Евгений", email = "pypi@zedzhen.ru" }
 ]
-dependencies = ['pydantic~=2.10', 'typing-extensions~=4.14']
+dependencies = [
+    'pydantic~=2.10',
+    'typing-extensions~=4.14',
+]
 dynamic = ["version"]
 
 [project.urls]
