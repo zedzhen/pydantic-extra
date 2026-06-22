@@ -9,7 +9,7 @@ from pathlib import Path
 from pydantic import TypeAdapter
 from sqlalchemy import URL
 
-from pydantic_extra.adb import AsyncAnyDB, AsyncDB, AsyncMysql, AsyncSQLite, T_AsyncDB
+from pydantic_extra.adb import AsyncAnyDB, AsyncDB, AsyncMySQL, AsyncSQLite, T_AsyncDB
 
 try:
     import aiosqlite
@@ -56,7 +56,7 @@ def test_sqlite_skip():
     pass
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, AsyncMysql.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, AsyncMySQL.model_validate])
 @pytest.mark.parametrize("type_", ["mysql", "mariadb"])
 def test_mysql(func, type_):
     data = {
@@ -85,7 +85,7 @@ def test_mysql_skip():
     pass
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, AsyncMysql.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, AsyncMySQL.model_validate])
 @pytest.mark.parametrize("type_", ["mysql", "mariadb"])
 def test_mysql_default(func, type_):
     data = {

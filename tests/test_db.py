@@ -9,7 +9,7 @@ from pydantic import TypeAdapter
 from sqlalchemy import URL, Engine
 from sqlalchemy.orm import Session
 
-from pydantic_extra.db import DB, T_DB, AnyDB, Mysql, SQLite
+from pydantic_extra.db import DB, T_DB, AnyDB, MySQL, SQLite
 
 try:
     import pymysql
@@ -42,7 +42,7 @@ def test_sqlite(func):
     _base_test(obj, True)
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, Mysql.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, MySQL.model_validate])
 @pytest.mark.parametrize("type_", ["mysql", "mariadb"])
 def test_mysql(func, type_):
     data = {
@@ -71,7 +71,7 @@ def test_mysql_skip():
     pass
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, Mysql.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, MySQL.model_validate])
 @pytest.mark.parametrize("type_", ["mysql", "mariadb"])
 def test_mysql_default(func, type_):
     data = {

@@ -20,16 +20,18 @@ dynamic = ["version", "dependencies", "optional-dependencies"]
 source = "https://github.com/zedzhen/pydantic-extra"
 
 [dependency-groups]
-test = ['pytest~=9.0']
+test = [
+    'pytest~=9.0',
+    { include-group ="requires" },
+    { include-group ="db" },
+    { include-group ="db_full" },
+    { include-group ="adb_full" },
+]
 dev = [
     'black~=26.5',
     'isort~=8.0',
     "build==1.5.*",
     "pre-commit~=4.6",
-    { include-group ="requires" },
-    { include-group ="db" },
-    { include-group ="db_full" },
-    { include-group ="adb_full" },
     { include-group ="test" },
 ]
 requires = [
