@@ -35,7 +35,7 @@ class DB(BaseModel, DBBase, ABC):
         """Настраивает sqlalchemy для работы с данным диалектом"""
 
 
-class SQLite(DB, SQLiteBase):
+class SQLite(SQLiteBase, DB):
     @cached_property
     def connect_str(self) -> str | URL:
         """строка для sqlalchemy.create_engine"""
@@ -47,7 +47,7 @@ class SQLite(DB, SQLiteBase):
         return engine
 
 
-class MySQL(DB, MysqlBase, default_library="pymysql"):
+class MySQL(MysqlBase, DB, default_library="pymysql"):
     pass
 
 
@@ -56,7 +56,7 @@ class Mysql(MySQL):
     pass
 
 
-class AnyDB(DB, AnyBase):
+class AnyDB(AnyBase, DB):
     pass
 
 

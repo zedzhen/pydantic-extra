@@ -31,7 +31,7 @@ class AsyncDB(BaseModel, DBBase, ABC):
         return engine
 
 
-class AsyncSQLite(AsyncDB, SQLiteBase, CustomLibraryMixin, default_library="aiosqlite"):
+class AsyncSQLite(SQLiteBase, AsyncDB, CustomLibraryMixin, default_library="aiosqlite"):
     @cached_property
     def connect_str(self) -> str | URL:
         """строка для sqlalchemy.ext.asyncio.create_async_engine"""
@@ -43,11 +43,11 @@ class AsyncSQLite(AsyncDB, SQLiteBase, CustomLibraryMixin, default_library="aios
         return engine
 
 
-class AsyncMySQL(AsyncDB, MysqlBase, default_library="aiomysql"):
+class AsyncMySQL(MysqlBase, AsyncDB, default_library="aiomysql"):
     pass
 
 
-class AsyncAnyDB(AsyncDB, AnyBase):
+class AsyncAnyDB(AnyBase, AsyncDB):
     pass
 
 
