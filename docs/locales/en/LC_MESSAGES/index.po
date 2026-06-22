@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pydantic-extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 10:01+0300\n"
-"PO-Revision-Date: 2026-06-22 10:54+0300\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2026-06-22 12:53+0300\n"
+"PO-Revision-Date: 2026-06-22 12:54+0300\n"
+"Last-Translator: Ярыкин Евгений <pypi@zedzhen.ru>\n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,11 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 "X-Generator: Poedit 3.9\n"
 
-#: ../../docs/index.rst:6
+#: ../../docs/index.rst:10
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../../docs/index.rst:6
+#: ../../docs/index.rst:10
 msgid "Содержание:"
 msgstr "Content:"
 
@@ -36,3 +36,11 @@ msgstr "pydantic-extra documentation"
 #: ../../docs/index.rst:4
 msgid "``pydantic-extra`` содержит дополнительные типы и модели для pydantic"
 msgstr "``pydantic-extra`` contains additional types and models for pydantic"
+
+#: ../../docs/index.rst:7
+msgid "`Документация на русском </ru>`_"
+msgstr "`Документация на русском </ru>`_"
+
+#: ../../docs/index.rst:8
+msgid "`Documentation in English </en>`_"
+msgstr "`Documentation in English </en>`_"
