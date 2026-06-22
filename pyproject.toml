@@ -32,6 +32,17 @@ dev = [
     { include-group ="adb_full" },
     { include-group ="test" },
 ]
+docs = [
+    "sphinx~=9.0",
+    "sphinx-intl~=2.3",
+    "sphinx-refs-alias~=2.0",
+    "sphinx-deprecated-deleted~=1.1",
+    "furo==2025.12.19",
+]
+autodocs = [
+    "sphinx-autobuild~=2025.8",
+    { include-group ="docs" },
+]
 requires = [
     'pydantic~=2.10',
     'typing-extensions~=4.14',
