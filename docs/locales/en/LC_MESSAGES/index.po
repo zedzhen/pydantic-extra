@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Ярыкин Евгений
+# This file is distributed under the same license as the pydantic-extra
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pydantic-extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-22 10:01+0300\n"
+"PO-Revision-Date: 2026-06-22 10:54+0300\n"
+"Last-Translator: \n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+"X-Generator: Poedit 3.9\n"
+
+#: ../../docs/index.rst:6
+msgid "GitHub"
+msgstr "GitHub"
+
+#: ../../docs/index.rst:6
+msgid "Содержание:"
+msgstr "Content:"
+
+#: ../../docs/index.rst:2
+msgid "Документация pydantic-extra"
+msgstr "pydantic-extra documentation"
+
+#: ../../docs/index.rst:4
+msgid "``pydantic-extra`` содержит дополнительные типы и модели для pydantic"
+msgstr "``pydantic-extra`` contains additional types and models for pydantic"

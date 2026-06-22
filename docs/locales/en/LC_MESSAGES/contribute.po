@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Ярыкин Евгений
+# This file is distributed under the same license as the pydantic-extra
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pydantic-extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-22 11:20+0300\n"
+"PO-Revision-Date: 2026-06-22 11:23+0300\n"
+"Last-Translator: Ярыкин Евгений <pypi@zedzhen.ru>\n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+"X-Generator: Poedit 3.9\n"
+
+#: ../../docs/contribute/index.rst:2
+msgid "Вклад"
+msgstr "Contribution"
+
+#: ../../docs/contribute/index.rst:4
+msgid ""
+"pydantic-extra - это проект с открытым исходным кодом, поддерживаемый "
+"волонтёрами. Мы приветствуем любой вклад в проект."
+msgstr ""
+"pydantic-extra is an open source project supported by volunteers. We welcome "
+"any contribution to the project."
+
+#: ../../docs/contribute/index.rst:7
+msgid "Настройка"
+msgstr "Setup"
+
+#: ../../docs/contribute/index.rst:9
+msgid "Склонируйте этот репозиторий"
+msgstr "Clone this repository"
+
+#: ../../docs/contribute/index.rst:16
+msgid "Создайте и активируйте виртуальное окружение"
+msgstr "Create and activate a virtual environment"
+
+#: ../../docs/contribute/index.rst:18
+msgid "Установите зависимости"
+msgstr "Install the dependencies"
+
+#: ../../docs/contribute/index.rst:24
+msgid "Установить хук pre-commit"
+msgstr "Install the pre-commit hook"
+
+#: ../../docs/contribute/tools.rst:2
+msgid "Инструменты"
+msgstr "Tools"
+
+#: ../../docs/contribute/tools.rst:5
+msgid "tools/autobuild_docs.py"
+msgstr "tools/autobuild_docs.py"
+
+#: ../../docs/contribute/tools.rst:6
+msgid ""
+"Собирает документацию для просмотра по адресу `127.0.0.1:8000 <http://"
+"127.0.0.1:8000>`_. Автоматически пересобирает документацию при обновлении "
+"файлов. Принимает один параметр, язык для генерации документации (если не "
+"указан, будет использовать язык по умолчанию)."
+msgstr ""
+"Collects documentation for viewing at `127.0.0.1:8000 <http://"
+"127.0.0.1:8000>`_. Automatically reassembles documentation when updating files. "
+"Accepts one parameter, the language for generating documentation (if not "
+"specified, it will use the default language)."
+
+#: ../../docs/contribute/tools.rst:11
+msgid "tools/build_docs.py"
+msgstr "tools/build_docs.py"
+
+#: ../../docs/contribute/tools.rst:12
+msgid ""
+"Собирает документацию. Принимает один параметр, язык для генерации документации "
+"(если не указан, будет использовать язык по умолчанию)."
+msgstr ""
+"Collects documentation. Accepts one parameter, the language for generating "
+"documentation (if not specified, it will use the default language)."
+
+#: ../../docs/contribute/tools.rst:17
+msgid "tools/gen_po.py"
+msgstr "tools/gen_po.py"
+
+#: ../../docs/contribute/tools.rst:18
+msgid "Генерирует/обновляет po файлы для документации для указанных языков."
+msgstr "Generates/updates po files for documentation for the specified languages."
+
+#: ../../docs/contribute/tools.rst:25
+msgid "tools/gen_pot.py"
+msgstr "tools/gen_pot.py"
+
+#: ../../docs/contribute/tools.rst:26
+msgid "Генерирует/обновляет pot файлы для документации."
+msgstr "Generates/updates pot files for documentation."
