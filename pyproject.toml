@@ -67,6 +67,7 @@ line-length = 120
 profile = "black"
 line_length = 120
 combine_as_imports = true
+src_paths = ["src", "tools"]
 
 [tool.dynamic_dependencies]
 require = "requires"
