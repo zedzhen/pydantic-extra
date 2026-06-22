@@ -193,7 +193,7 @@ msgid "Конфигурация для подключения к SMTP серве
 msgstr "Configuration for connecting to an SMTP server"
 
 #: ../../docs/api/smtp.rst:33
-msgid "Если равно :py:obj:`None`, присваиваится значение :py:attr:`smtp_login`"
+msgid "Если равно :py:obj:`None`, присваивается значение :py:attr:`smtp_login`"
 msgstr "If it is equal to :py:obj:`None`, the value is assigned to :py:attr:`smtp_login`"
 
 #: ../../docs/api/smtp.rst:38

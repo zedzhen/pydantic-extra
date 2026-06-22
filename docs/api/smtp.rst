@@ -30,7 +30,7 @@ smtp
     :type: str
     :value: None
 
-    Если равно :py:obj:`None`, присваиваится значение :py:attr:`smtp_login`
+    Если равно :py:obj:`None`, присваивается значение :py:attr:`smtp_login`
 
 
   .. py:method:: connect() -> smtplib.SMTP
