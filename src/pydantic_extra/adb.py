@@ -1,4 +1,4 @@
-__all__ = ["AsyncDB", "AsyncSQLite", "AsyncMysql", "AsyncAnyDB", "T_AsyncDB"]
+__all__ = ["AsyncDB", "AsyncSQLite", "AsyncMySQL", "AsyncAnyDB", "T_AsyncDB"]
 
 from abc import ABC, abstractmethod
 from functools import cached_property

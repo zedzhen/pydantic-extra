@@ -1,4 +1,4 @@
-__all__ = ["DB", "SQLite", "Mysql", "AnyDB", "T_DB"]
+__all__ = ["DB", "SQLite", "Mysql", "MySQL", "AnyDB", "T_DB"]
 
 from abc import ABC, abstractmethod
 from functools import cached_property
