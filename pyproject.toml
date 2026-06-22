@@ -34,6 +34,17 @@ dev = [
     "pre-commit~=4.6",
     { include-group ="test" },
 ]
+docs = [
+    "sphinx~=9.0",
+    "sphinx-intl~=2.3",
+    "sphinx-refs-alias~=2.0",
+    "sphinx-deprecated-deleted~=1.1",
+    "furo==2025.12.19",
+]
+autodocs = [
+    "sphinx-autobuild~=2025.8",
+    { include-group ="docs" },
+]
 requires = [
     'pydantic~=2.10',
     'typing-extensions~=4.14',
@@ -58,6 +69,7 @@ line-length = 120
 profile = "black"
 line_length = 120
 combine_as_imports = true
+src_paths = ["src", "tools"]
 
 [tool.dynamic_dependencies]
 require = "requires"

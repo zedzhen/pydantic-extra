@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Ярыкин Евгений
+# This file is distributed under the same license as the pydantic-extra
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pydantic-extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-22 10:01+0300\n"
+"PO-Revision-Date: 2026-06-22 10:48+0300\n"
+"Last-Translator: \n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+"X-Generator: Poedit 3.9\n"
+
+#: ../../docs/basic/db_library.rst:2
+msgid "Библиотеки для подключения"
+msgstr "Libraries to connect to"
+
+#: ../../docs/basic/db_library.rst:4
+msgid "Sqlite поддерживается стандартной библиотекой python."
+msgstr "Sqlite is supported by the python standard library."
+
+#: ../../docs/basic/db_library.rst:6
+msgid ""
+"Для AnyDB и AsyncAnyDB библиотека для подключения задаётся конечным "
+"пользователем и он ответственный за её установку."
+msgstr ""
+"For AnyDB and AsyncAnyDB, the connection library is set by the end user "
+"and he is responsible for installing it."
+
+#: ../../docs/basic/db_library.rst:8
+msgid ""
+"Для Mysql, AsyncMysql, AsyncSqlite используются внешние библиотеки. "
+"Используемые по умолчанию библиотеки (PyMySQL, aiomysql, aiosqlite), "
+"устанавливаются в группах ``db_full`` и ``adb_full``"
+msgstr ""
+"External libraries are used for Mysql, AsyncMysql, and AsyncSqlite. The "
+"default libraries (PyMySQL, aiomysql, and aiosqlite) are installed in "
+"the `db_full` and `adb_full` groups"
+
+#: ../../docs/basic/db_library.rst:14
+msgid "Замена библиотек"
+msgstr "Replacing libraries"
+
+#: ../../docs/basic/db_library.rst:16
+msgid "Для замены библиотеки (один пункт на выбор):"
+msgstr "To replace the library (one item to choose from):"
+
+#: ../../docs/basic/db_library.rst:18
+msgid "изменить ``_library`` поле класса"
+msgstr "change the ``_library`` field of the class"
+
+#: ../../docs/basic/db_library.rst:23
+msgid "изменить ``library`` поле экземпляра"
+msgstr "change the ``library`` instance field"
+
+#: ../../docs/basic/db_library.rst:28
+msgid "создать подкласс указав параметр ``default_library``"
+msgstr "create a subclass by specifying the ``default_library`` parameter"
+
+#: ../../docs/basic/quickstart.rst:2
+msgid "Быстрый старт"
+msgstr "Quick start"
+
+#: ../../docs/basic/quickstart.rst:5
+msgid "Установка"
+msgstr "Install"
+
+#: ../../docs/basic/quickstart.rst:7
+msgid "Установка из PyPI"
+msgstr "Installation from PyPI"
+
+#: ../../docs/basic/quickstart.rst:13
+msgid ""
+"Для работы с базами данных (``pydantic_extra.db``, "
+"``pydantic_extra.adb``) требуется"
+msgstr ""
+"To work with databases (`pydantic_extra.db\", `pydantic_extra.adb\") "
+"required"
+
+#: ../../docs/basic/quickstart.rst:19
+msgid "Для полной функциональности ``pydantic_extra.db`` (для Mysql)"
+msgstr "For full functionality of `pydantic_extra.db\" (for Mysql)"
+
+#: ../../docs/basic/quickstart.rst:26
+msgid ""
+"Для полной функциональности ``pydantic_extra.adb`` (для AsyncMysql, "
+"AsyncSqlite)"
+msgstr ""
+"For full functionality of `pydantic_extra.adb\" (for AsyncMysql, "
+"AsyncSqlite)"
+
+#: ../../docs/basic/quickstart.rst:33
+msgid "Использование"
+msgstr "Using"
+
+#: ../../docs/basic/quickstart.rst:35
+msgid ""
+"При валидации используйте также, как и остальные типы. Доступные функции "
+"смотрите в API."
+msgstr ""
+"When validating, use the same as the other types. See the available "
+"functions in the API."

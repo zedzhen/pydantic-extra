@@ -1,0 +1,1 @@
+.. |attr_library| replace:: Используемая библиотека. :ref:`Способы замены. <db_library>`

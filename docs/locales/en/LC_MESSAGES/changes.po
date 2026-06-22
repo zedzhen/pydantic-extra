@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Ярыкин Евгений
+# This file is distributed under the same license as the pydantic-extra
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pydantic-extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-22 10:01+0300\n"
+"PO-Revision-Date: 2026-06-22 10:51+0300\n"
+"Last-Translator: \n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+"X-Generator: Poedit 3.9\n"
+
+#: ../../docs/changes.rst:2
+msgid "История изменений"
+msgstr "Changelog"
+
+#: ../../docs/changes.rst:5
+msgid "v1.1.0 (Невыпущено)"
+msgstr "v1.1.0 (Unreleased)"
+
+#: ../../docs/changes.rst:8
+msgid "Новые функции"
+msgstr "New features"
+
+#: ../../docs/changes.rst:10
+msgid ""
+"Новый метод :py:meth:`pydantic_extra.db.DB.setup_engine`. Он настраивает "
+"конкретный экземпляр :py:class:`sqlalchemy.Engine`."
+msgstr ""
+"New method :py:meth:`pydantic_extra.db.DB.setup_engine`. It sets up a "
+"specific instance :py:class:`sqlalchemy.Engine`."
+
+#: ../../docs/changes.rst:12
+msgid ""
+"Добавлена поддержка альтернативных библиотек "
+"для :py:class:`~pydantic_extra.db.MySQL`"
+msgstr ""
+"Added support for alternative libraries "
+"for :py:class:`~pydantic_extra.db.MySQL`"
+
+#: ../../docs/changes.rst:13
+msgid "Добавлена поддержка асинхронного использования баз данных :gh:`1`"
+msgstr "Added support for asynchronous database usage :gh:`1`"
+
+#: ../../docs/changes.rst:16
+msgid "Устаревшие функции"
+msgstr "Outdated functions"
+
+#: ../../docs/changes.rst:18
+msgid ""
+"Метод :py:meth:`pydantic_extra.db.DB.setup` устарел и будет удалён в "
+"версии 2.0. Используйте :py:meth:`pydantic_extra.db.DB.setup_engine`."
+msgstr ""
+"Method :py:meth:`pydantic_extra.db.DB.setup` is deprecated and will be "
+"removed in version 2.0. Use :py:meth:`pydantic_extra.db.DB.setup_engine`."
+
+#: ../../docs/changes.rst:20
+msgid "Удалена поддержка python 3.8, 3.9"
+msgstr "Removed support for python 3.8, 3.9"
+
+#: ../../docs/changes.rst:23
+msgid "Другое"
+msgstr "Other"
+
+#: ../../docs/changes.rst:25
+msgid "Обновление зависимостей"
+msgstr "Updating dependencies"
+
+#: ../../docs/changes.rst:26
+msgid "Улучшены подсказки типов"
+msgstr "Improved type hints"
+
+#: ../../docs/changes.rst:27
+msgid "Добавлены тесты"
+msgstr "Added tests"
+
+#: ../../docs/changes.rst:28
+msgid "Добавлена документация"
+msgstr "Added documentation"
+
+#: ../../docs/changes.rst:31
+msgid "v1.0.2 (27.05.2026)"
+msgstr "v1.0.2 (27.05.2026)"
+
+#: ../../docs/changes.rst:33
+msgid "обновление зависимостей"
+msgstr "updating dependencies"
+
+#: ../../docs/changes.rst:36
+msgid "v1.0.0 (28.12.2024)"
+msgstr "v1.0.0 (28.12.2024)"
+
+#: ../../docs/changes.rst:38
+msgid "Первый релиз"
+msgstr "The first release"
