@@ -1,5 +1,8 @@
 [build-system]
-requires = ["setuptools>=81"]
+requires = [
+    "setuptools>=81",
+    "gitversion_simple[setuptools]~=2.0",
+]
 
 [project]
 name = "pydantic-extra"
@@ -33,9 +36,6 @@ dev = [
     "build==1.5.*",
     "pre-commit~=4.6",
 ]
-
-[tool.setuptools.dynamic]
-version = { attr = "pydantic_extra.__version__" }
 
 [tool.pytest]
 pythonpath = ["src"]
