@@ -2,6 +2,7 @@
 requires = [
     "setuptools>=81",
     "gitversion_simple[setuptools]~=2.0",
+    "dynamic-dependencies[setuptools]~=1.0",
 ]
 
 [project]
@@ -13,28 +14,33 @@ license = { file = "LICENSE" }
 authors = [
     { name = "Ярыкин Евгений", email = "pypi@zedzhen.ru" }
 ]
-dependencies = [
-    'pydantic~=2.10',
-    'typing-extensions~=4.14',
-]
-dynamic = ["version"]
+dynamic = ["version", "dependencies", "optional-dependencies"]
 
 [project.urls]
 source = "https://github.com/zedzhen/pydantic-extra"
 
-[project.optional-dependencies]
-db = ['sqlalchemy~=2.0']
-db_full = ['pymysql~=1.1,!=1.1.0']
-adb_full = [
-    'aiosqlite>=0.20,<0.23',
-    'aiomysql~=0.3.0',
-]
+[dependency-groups]
 test = ['pytest~=9.0']
 dev = [
     'black~=26.5',
     'isort~=8.0',
     "build==1.5.*",
     "pre-commit~=4.6",
+    { include-group ="requires" },
+    { include-group ="db" },
+    { include-group ="db_full" },
+    { include-group ="adb_full" },
+    { include-group ="test" },
+]
+requires = [
+    'pydantic~=2.10',
+    'typing-extensions~=4.14',
+]
+db = ['sqlalchemy~=2.0']
+db_full = ['pymysql~=1.1,!=1.1.0']
+adb_full = [
+    'aiosqlite>=0.20,<0.23',
+    'aiomysql~=0.3.0',
 ]
 
 [tool.pytest]
@@ -50,3 +56,10 @@ line-length = 120
 profile = "black"
 line_length = 120
 combine_as_imports = true
+
+[tool.dynamic_dependencies]
+require = "requires"
+[tool.dynamic_dependencies.optional]
+db = "db"
+db_full = "db_full"
+adb_full = "adb_full"
