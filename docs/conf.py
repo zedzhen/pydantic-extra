@@ -16,7 +16,6 @@ copyright = f"2026, {author}"
 extensions = [
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
-    "sphinx.ext.autodoc",
     "sphinx_refs_alias.ext",
     "sphinx_deprecated_deleted.ext",
 ]
