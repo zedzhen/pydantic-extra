@@ -37,7 +37,7 @@ requires = [
     'typing-extensions~=4.14',
 ]
 db = ['sqlalchemy~=2.0']
-db_full = ['pymysql~=1.1,!=1.1.0']
+db_full = ['pymysql>=1.1.1,<2.0']
 adb_full = [
     'aiosqlite>=0.20,<0.23',
     'aiomysql~=0.3.0',
