@@ -7,7 +7,7 @@ smtp
 
   Базовые классы: :py:class:`pydantic.BaseModel`
 
-  Кофигурация для подключения к SMTP серверу
+  Конфигурация для подключения к SMTP серверу
 
   .. py:attribute:: smtp_host
     :type: str
