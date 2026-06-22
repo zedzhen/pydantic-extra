@@ -40,7 +40,7 @@ docs = [
     "furo==2025.12.19",
 ]
 autodocs = [
-    "sphinx-autobuild~=2025.8",
+    "sphinx-autobuild>=2025.8,<2025.0",
     { include-group ="docs" },
 ]
 requires = [
