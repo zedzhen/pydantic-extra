@@ -23,9 +23,7 @@ source = "https://github.com/zedzhen/pydantic-extra"
 test = [
     'pytest~=9.0',
     { include-group ="requires" },
-    { include-group ="db" },
-    { include-group ="db_full" },
-    { include-group ="adb_full" },
+    { include-group ="full" },
 ]
 dev = [
     'black~=26.5',
@@ -55,6 +53,11 @@ adb_full = [
     'aiosqlite>=0.20,<0.23',
     'aiomysql~=0.3.0',
 ]
+full = [
+    { include-group ="db" },
+    { include-group ="db_full" },
+    { include-group ="adb_full" },
+]
 
 [tool.pytest]
 pythonpath = ["src"]
@@ -77,3 +80,4 @@ require = "requires"
 db = "db"
 db_full = "db_full"
 adb_full = "adb_full"
+full = "full"

@@ -2,113 +2,23 @@
 
 Данный модуль содержит готовые модели pydantic для частых задач.
 
-установка
-`pip install pydantic-extra`
-
-# pydantic-extra.smtp
-
-## модель MailServer
-
-* `smtp_host` - хост
-* `smtp_port` - порт (по умолчанию: 465)
-* `smtp_ssl` - использовать ssl (по умолчанию: True)
-* `smtp_login`/`smtp_password` - данные для авторизации
-* `from_addr` - имя отправителя (по умолчанию: `smtp_login`)
-
-# pydantic-extra.db
-
-Требует дополнительные зависимости `db` (sqlalchemy) \
-`pip install pydantic-extra[db]`
-
-Mysql требует дополнительную зависимость `db_full` (PyMySQL) (или иную библиотеку, с заменой Mysql._library) \
-`pip install pydantic-extra[db_full]`
-
-## модели DB(базовая модель), SQLite, Mysql(в т.ч. для MariaDB), AnyDB
-
-### SQLite
-
-* `type` - `sqlite`
-* `path` - путь до БД
-
-### AnyDB
-
-* `type` - `any`
-* `str` - строка подключения для sqlalchemy
-
-### Mysql
-
-* `type` - `mysql` или `mariadb`
-* `host` - хост
-* `port` - порт (по умолчанию: 3306)
-* `login`/`password` - данные для авторизации
-* `encoding` - кодировка (по умолчанию: `utf8mb4`)
-* `database` - имя БД
-
-Вы можете изменить `_library` на уровне класса или `library` для экземпляра, чтобы изменить используемую библиотеку
-
-### DB
-
-* `connect_str()` - возвращает строку подключения для sqlalchemy или sqlalchemy.URL
-* `setup(engine)` - настраивает экземпляр sqlalchemy.Engine для работы с данным диалектом
-
-# pydantic-extra.adb
-
-Требует дополнительные зависимости `db` (sqlalchemy) \
-`pip install pydantic-extra[db]`
-
-Mysql,SQLite требует дополнительную зависимость `adb_full` (aiomysql, aiosqlite) (или иные библиотеки, с заменой AsyncMysql._library, AsyncSqlite._library) \
-`pip install pydantic-extra[adb_full]`
-
-## модели AsyncDB(базовая модель), AsyncSQLite, AsyncMysql(в т.ч. для MariaDB), AsyncAnyDB
-
-### AsyncSQLite
-
-* `type` - `sqlite`
-* `path` - путь до БД
-
-Вы можете изменить `_library` на уровне класса или `library` для экземпляра, чтобы изменить используемую библиотеку
-
-### AsyncAnyDB
-
-* `type` - `any`
-* `str` - строка подключения для sqlalchemy
-
-### AsyncMysql
-
-* `type` - `mysql` или `mariadb`
-* `host` - хост
-* `port` - порт (по умолчанию: 3306)
-* `login`/`password` - данные для авторизации
-* `encoding` - кодировка (по умолчанию: `utf8mb4`)
-* `database` - имя БД
-
-Вы можете изменить `_library` на уровне класса или `library` для экземпляра, чтобы изменить используемую библиотеку
-
-### AsyncDB
-
-* `connect_str()` - возвращает строку подключения для sqlalchemy или sqlalchemy.URL
-* `setup(engine)` - настраивает экземпляр sqlalchemy.ext.asyncio.AsyncEngine для работы с данным диалектом
-
-## использование
-
-```python
-from pydantic import BaseModel, Field
-from pydantic_extra.db import T_DB
+This module contains ready-made pydantic models for frequent tasks.
 
 
-class ExampleConfig(BaseModel):
-    db: T_DB = Field(discriminator='type')
-```
+[Documentation in English](https://pydantic-extra.readthedocs.io/en/stable/)
 
-С базой данной SQLite по умолчанию
-
-```python
-from pathlib import Path
-
-from pydantic import BaseModel, Field
-from pydantic_extra.db import T_DB, SQLite
+[Документация на русском](https://pydantic-extra.readthedocs.io/ru/stable/)
 
 
-class ExampleConfig(BaseModel):
-    db: T_DB = Field(SQLite(type="sqlite", path=Path('example.sqlite')), discriminator='type')
-```
+## pydantic_extra.smtp
+
+Настройка подключения к SMTP серверу.
+
+Configuring the connection to the SMTP server.
+
+
+## pydantic_extra.db, pydantic_extra.adb
+
+Настройка подключения к базам данных (в т.ч. в asyncio программах).
+
+Configuring connection to databases (including in asyncio programs).

@@ -29,6 +29,12 @@
 
     pip install pydantic-extra[db,adb_full]
 
+Для установки всех необязательных зависимостей используйте группу ``full``
+
+.. code:: console
+
+    pip install pydantic-extra[full]
+
 Использование
 -------------
 

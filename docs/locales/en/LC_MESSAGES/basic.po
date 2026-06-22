@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pydantic-extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 10:01+0300\n"
-"PO-Revision-Date: 2026-06-22 10:48+0300\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2026-06-22 13:00+0300\n"
+"PO-Revision-Date: 2026-06-22 13:01+0300\n"
+"Last-Translator: Ярыкин Евгений <pypi@zedzhen.ru>\n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -34,8 +34,8 @@ msgid ""
 "Для AnyDB и AsyncAnyDB библиотека для подключения задаётся конечным "
 "пользователем и он ответственный за её установку."
 msgstr ""
-"For AnyDB and AsyncAnyDB, the connection library is set by the end user "
-"and he is responsible for installing it."
+"For AnyDB and AsyncAnyDB, the connection library is set by the end user and he "
+"is responsible for installing it."
 
 #: ../../docs/basic/db_library.rst:8
 msgid ""
@@ -43,9 +43,9 @@ msgid ""
 "Используемые по умолчанию библиотеки (PyMySQL, aiomysql, aiosqlite), "
 "устанавливаются в группах ``db_full`` и ``adb_full``"
 msgstr ""
-"External libraries are used for Mysql, AsyncMysql, and AsyncSqlite. The "
-"default libraries (PyMySQL, aiomysql, and aiosqlite) are installed in "
-"the `db_full` and `adb_full` groups"
+"External libraries are used for Mysql, AsyncMysql, and AsyncSqlite. The default "
+"libraries (PyMySQL, aiomysql, and aiosqlite) are installed in the `db_full` and "
+"`adb_full` groups"
 
 #: ../../docs/basic/db_library.rst:14
 msgid "Замена библиотек"
@@ -81,11 +81,10 @@ msgstr "Installation from PyPI"
 
 #: ../../docs/basic/quickstart.rst:13
 msgid ""
-"Для работы с базами данных (``pydantic_extra.db``, "
-"``pydantic_extra.adb``) требуется"
+"Для работы с базами данных (``pydantic_extra.db``, ``pydantic_extra.adb``) "
+"требуется"
 msgstr ""
-"To work with databases (`pydantic_extra.db\", `pydantic_extra.adb\") "
-"required"
+"To work with databases (`pydantic_extra.db\", `pydantic_extra.adb\") required"
 
 #: ../../docs/basic/quickstart.rst:19
 msgid "Для полной функциональности ``pydantic_extra.db`` (для Mysql)"
@@ -93,20 +92,22 @@ msgstr "For full functionality of `pydantic_extra.db\" (for Mysql)"
 
 #: ../../docs/basic/quickstart.rst:26
 msgid ""
-"Для полной функциональности ``pydantic_extra.adb`` (для AsyncMysql, "
-"AsyncSqlite)"
+"Для полной функциональности ``pydantic_extra.adb`` (для AsyncMysql, AsyncSqlite)"
 msgstr ""
-"For full functionality of `pydantic_extra.adb\" (for AsyncMysql, "
-"AsyncSqlite)"
+"For full functionality of `pydantic_extra.adb\" (for AsyncMysql, AsyncSqlite)"
 
-#: ../../docs/basic/quickstart.rst:33
+#: ../../docs/basic/quickstart.rst:32
+msgid "Для установки всех необязательных зависимостей используйте группу ``full``"
+msgstr "To install all optional dependencies, use the ``full`` group"
+
+#: ../../docs/basic/quickstart.rst:39
 msgid "Использование"
 msgstr "Using"
 
-#: ../../docs/basic/quickstart.rst:35
+#: ../../docs/basic/quickstart.rst:41
 msgid ""
 "При валидации используйте также, как и остальные типы. Доступные функции "
 "смотрите в API."
 msgstr ""
-"When validating, use the same as the other types. See the available "
-"functions in the API."
+"When validating, use the same as the other types. See the available functions "
+"in the API."
