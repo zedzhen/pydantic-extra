@@ -1,7 +1,7 @@
 [build-system]
 requires = [
     "setuptools>=81",
-    "gitversion_simple[setuptools]~=2.0",
+    "gitversion_simple[setuptools]>=2,<4",
     "dynamic-dependencies[setuptools]~=1.0",
 ]
 
