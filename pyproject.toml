@@ -33,7 +33,7 @@ dev = [
     { include-group ="test" },
 ]
 docs = [
-    "sphinx~=9.0",
+    "sphinx>=9,<9",
     "sphinx-intl~=2.3",
     "sphinx-refs-alias~=2.0",
     "sphinx-deprecated-deleted~=1.1",
