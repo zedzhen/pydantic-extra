@@ -76,6 +76,7 @@ Enum6A = Annotated[Enum0, EnumByNameAnnotate(ignore_case=False, forbidden_keys=(
 all_keys = ("A", "B", "C", "D")
 allow_keys = ("B", "D")
 forbidden_keys = ("A", "C")
+no_keys = ("E", "e")
 
 
 @pytest.mark.parametrize("ann", [Enum1, Enum1A])
@@ -86,6 +87,9 @@ def test_1(ann):
     for x in all_keys:
         A.model_validate({"a": x})
         A.model_validate({"a": x.lower()})
+    for x in no_keys:
+        with pytest.raises(ValidationError):
+            A.model_validate({"a": x})
 
 
 @pytest.mark.parametrize("ann", [Enum2, Enum2A])
@@ -97,6 +101,9 @@ def test_2(ann):
         A.model_validate({"a": x})
         with pytest.raises(ValidationError):
             A.model_validate({"a": x.lower()})
+    for x in no_keys:
+        with pytest.raises(ValidationError):
+            A.model_validate({"a": x})
 
 
 @pytest.mark.parametrize("ann", [Enum3, Enum3A])
@@ -112,6 +119,9 @@ def test_3(ann):
             A.model_validate({"a": x})
         with pytest.raises(ValidationError):
             A.model_validate({"a": x.lower()})
+    for x in no_keys:
+        with pytest.raises(ValidationError):
+            A.model_validate({"a": x})
 
 
 @pytest.mark.parametrize("ann", [Enum4, Enum4A])
@@ -128,6 +138,9 @@ def test_4(ann):
             A.model_validate({"a": x})
         with pytest.raises(ValidationError):
             A.model_validate({"a": x.lower()})
+    for x in no_keys:
+        with pytest.raises(ValidationError):
+            A.model_validate({"a": x})
 
 
 @pytest.mark.parametrize("ann", [Enum5, Enum5A])
@@ -143,6 +156,9 @@ def test_5(ann):
             A.model_validate({"a": x})
         with pytest.raises(ValidationError):
             A.model_validate({"a": x.lower()})
+    for x in no_keys:
+        with pytest.raises(ValidationError):
+            A.model_validate({"a": x})
 
 
 @pytest.mark.parametrize("ann", [Enum6, Enum6A])
@@ -154,3 +170,6 @@ def test_6(ann):
         A.model_validate({"a": x})
         with pytest.raises(ValidationError):
             A.model_validate({"a": x.lower()})
+    for x in no_keys:
+        with pytest.raises(ValidationError):
+            A.model_validate({"a": x})
