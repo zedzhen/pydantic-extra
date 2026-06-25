@@ -6,7 +6,7 @@ from functools import cached_property
 from pydantic import BaseModel
 from sqlalchemy import URL, event
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, create_async_engine
-from typing_extensions import TypeAlias, deprecated
+from typing_extensions import TypeAlias, override
 
 from pydantic_extra._db import AnyBase, CustomLibraryMixin, DBBase, MysqlBase, SQLiteBase
 
@@ -33,6 +33,7 @@ class AsyncDB(BaseModel, DBBase, ABC):
 
 class AsyncSQLite(SQLiteBase, AsyncDB, CustomLibraryMixin, default_library="aiosqlite"):
     @cached_property
+    @override
     def connect_str(self) -> str | URL:
         """строка для sqlalchemy.ext.asyncio.create_async_engine"""
         return URL.create(f"sqlite+{self.library}", database=str(self.path.absolute()))
@@ -44,11 +45,19 @@ class AsyncSQLite(SQLiteBase, AsyncDB, CustomLibraryMixin, default_library="aios
 
 
 class AsyncMySQL(MysqlBase, AsyncDB, default_library="aiomysql"):
-    pass
+    @cached_property
+    @override
+    def connect_str(self) -> str | URL:
+        """строка для sqlalchemy.ext.asyncio.create_async_engine"""
+        return super().connect_str
 
 
 class AsyncAnyDB(AnyBase, AsyncDB):
-    pass
+    @cached_property
+    @override
+    def connect_str(self) -> str | URL:
+        """строка для sqlalchemy.ext.asyncio.create_async_engine"""
+        return super().connect_str
 
 
 T_AsyncDB: TypeAlias = AsyncSQLite | AsyncMySQL | AsyncAnyDB

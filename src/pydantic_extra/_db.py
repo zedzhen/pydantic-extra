@@ -8,7 +8,7 @@ from pydantic import Field, SecretStr
 from sqlalchemy import URL
 from sqlalchemy.engine.interfaces import DBAPIConnection
 from sqlalchemy.pool import ConnectionPoolEntry
-from typing_extensions import Literal, override
+from typing_extensions import Literal
 
 
 class CustomLibraryMixin:
@@ -54,7 +54,6 @@ class MysqlBase(DBBase, CustomLibraryMixin, ABC):
 
     @cached_property
     def connect_str(self) -> str | URL:
-        """строка для sqlalchemy.create_engine"""
         return URL.create(
             f"mysql+{self.library}",
             self.login,
@@ -71,7 +70,5 @@ class AnyBase(DBBase):
     str_: str = Field(alias="str")
 
     @cached_property
-    @override
     def connect_str(self) -> str | URL:
-        """строка для sqlalchemy.create_engine"""
         return self.str_

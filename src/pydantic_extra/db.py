@@ -6,7 +6,7 @@ from functools import cached_property
 from pydantic import BaseModel
 from sqlalchemy import URL, Engine, create_engine, event
 from sqlalchemy.orm import Session
-from typing_extensions import TypeAlias, deprecated
+from typing_extensions import TypeAlias, deprecated, override
 
 from pydantic_extra._db import AnyBase, DBBase, MysqlBase, SQLiteBase
 
@@ -37,6 +37,7 @@ class DB(BaseModel, DBBase, ABC):
 
 class SQLite(SQLiteBase, DB):
     @cached_property
+    @override
     def connect_str(self) -> str | URL:
         """строка для sqlalchemy.create_engine"""
         return URL.create("sqlite", database=str(self.path.absolute()))
@@ -48,7 +49,11 @@ class SQLite(SQLiteBase, DB):
 
 
 class MySQL(MysqlBase, DB, default_library="pymysql"):
-    pass
+    @cached_property
+    @override
+    def connect_str(self) -> str | URL:
+        """строка для sqlalchemy.create_engine"""
+        return super().connect_str
 
 
 @deprecated("Устарело в версии 1.1.0. Будет удалено в версии 2.0.0. Используйте MySQL.")
@@ -57,7 +62,11 @@ class Mysql(MySQL):
 
 
 class AnyDB(AnyBase, DB):
-    pass
+    @cached_property
+    @override
+    def connect_str(self) -> str | URL:
+        """строка для sqlalchemy.create_engine"""
+        return super().connect_str
 
 
 T_DB: TypeAlias = SQLite | MySQL | AnyDB
