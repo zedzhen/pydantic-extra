@@ -20,13 +20,9 @@ source = "https://github.com/zedzhen/pydantic-extra"
 
 [dependency-groups]
 dev = [
-    "black~=26.5",
     "build==1.5.*",
-    "isort~=8.0",
     "pre-commit~=4.6",
-    "pyproject-fmt~=2.25",
     { include-group = "test" },
-    { include-group = "types" },
 ]
 test = [
     "pytest~=9.0",
@@ -55,6 +51,13 @@ full = [
     { include-group = "adb_full" },
     { include-group = "db" },
     { include-group = "db_full" },
+]
+lints = [
+    "autoflake~=2.3",
+    "black~=26.5",
+    "isort~=8.0",
+    "pyproject-fmt~=2.25",
+    { include-group = "types" },
 ]
 requires = [
     "pydantic~=2.10",
@@ -96,3 +99,8 @@ db = "db"
 db_full = "db_full"
 adb_full = "adb_full"
 full = "full"
+
+[tool.autoflake]
+remove_all_unused_imports = true
+ignore_init_module_imports = true
+remove_duplicate_keys = true

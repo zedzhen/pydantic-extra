@@ -15,11 +15,12 @@ pydantic-extra - это проект с открытым исходным код
 
 * Создайте и активируйте виртуальное окружение
 
-* Установите зависимости
+* Установите зависимости (``dev`` основные зависимости, ``autodocs`` для сборки документации с автообновлением,
+``lints`` для запуска линтеров вне коммита)
 
   .. code:: console
 
-    pip install --group dev --group autodocs
+    pip install --group dev --group autodocs --group lints
 
 * Установить хук pre-commit
 
