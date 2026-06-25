@@ -3,5 +3,5 @@ mypy_path = "docs:docs/ext:src"
 files = [ "docs" ]
 disallow_any_unimported = true
 warn_unreachable = true
-enable_error_code = [ "explicit-override", "ignore-without-code", "possibly-undefined" ]
+enable_error_code = [ "deprecated", "explicit-override", "ignore-without-code", "possibly-undefined" ]
 strict = true

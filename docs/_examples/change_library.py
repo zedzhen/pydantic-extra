@@ -1,4 +1,4 @@
-from pydantic_extra.db import Mysql
+from pydantic_extra.db import MySQL
 
-db = Mysql.model_validate(...)
+db = MySQL.model_validate(...)
 db.library = "other_library"

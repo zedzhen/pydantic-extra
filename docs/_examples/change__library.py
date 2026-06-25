@@ -1,3 +1,3 @@
-from pydantic_extra.db import Mysql
+from pydantic_extra.db import MySQL
 
-Mysql._library = "other_library"
+MySQL._library = "other_library"
