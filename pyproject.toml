@@ -1,70 +1,64 @@
 [build-system]
 requires = [
-    "setuptools>=81",
-    "gitversion_simple[setuptools]>=2,<4",
     "dynamic-dependencies[setuptools]~=1.0",
+    "gitversion-simple[setuptools]>=2,<4",
+    "setuptools>=81",
 ]
 
 [project]
 name = "pydantic-extra"
 description = "Готовые модели pydantic для частых задач"
 readme = "readme.md"
-requires-python = ">=3.10"
 license = { file = "LICENSE" }
-authors = [
-    { name = "Ярыкин Евгений", email = "pypi@zedzhen.ru" }
-]
-dynamic = ["version", "dependencies", "optional-dependencies"]
-
+requires-python = ">=3.10"
+dynamic = [ "dependencies", "optional-dependencies", "version" ]
+[[project.authors]]
+name = "Ярыкин Евгений"
+email = "pypi@zedzhen.ru"
 [project.urls]
 source = "https://github.com/zedzhen/pydantic-extra"
 
 [dependency-groups]
-test = [
-    'pytest~=9.0',
-    { include-group ="requires" },
-    { include-group ="full" },
-]
 dev = [
-    'black~=26.5',
-    'isort~=8.0',
+    "black~=26.5",
     "build==1.5.*",
+    "isort~=8.0",
     "pre-commit~=4.6",
-    { include-group ="test" },
+    "pyproject-fmt~=2.25",
+    { include-group = "test" },
+]
+test = [
+    "pytest~=9.0",
+    { include-group = "full" },
+    { include-group = "requires" },
 ]
 docs = [
+    "babel~=2.18",
+    "furo==2025.12.19",
     "sphinx~=9.0",
+    "sphinx-deprecated-deleted~=1.1",
     "sphinx-intl~=2.3",
     "sphinx-refs-alias~=2.0",
-    "sphinx-deprecated-deleted~=1.1",
-    "furo==2025.12.19",
-    "babel~=2.18",
+]
+adb_full = [
+    "aiomysql~=0.3.0",
+    "aiosqlite>=0.20,<0.23",
 ]
 autodocs = [
     "sphinx-autobuild~=2025.8",
-    { include-group ="docs" },
+    { include-group = "docs" },
+]
+db = [ "sqlalchemy~=2.0" ]
+db_full = [ "pymysql>=1.1.1,<2" ]
+full = [
+    { include-group = "adb_full" },
+    { include-group = "db" },
+    { include-group = "db_full" },
 ]
 requires = [
-    'pydantic~=2.10',
-    'typing-extensions~=4.14',
+    "pydantic~=2.10",
+    "typing-extensions~=4.14",
 ]
-db = ['sqlalchemy~=2.0']
-db_full = ['pymysql>=1.1.1,<2.0']
-adb_full = [
-    'aiosqlite>=0.20,<0.23',
-    'aiomysql~=0.3.0',
-]
-full = [
-    { include-group ="db" },
-    { include-group ="db_full" },
-    { include-group ="adb_full" },
-]
-
-[tool.pytest]
-pythonpath = ["src"]
-testpaths = ["tests"]
-addopts = ["--import-mode=importlib"]
-minversion = "9.0"
 
 [tool.black]
 line-length = 120
@@ -73,7 +67,19 @@ line-length = 120
 profile = "black"
 line_length = 120
 combine_as_imports = true
-src_paths = ["src", "tools"]
+src_paths = [ "src", "tools" ]
+
+[tool.pyproject-fmt]
+column_width = 120
+indent = 4
+generate_python_version_classifiers = false
+table_format = "long"
+
+[tool.pytest]
+addopts = [ "--import-mode=importlib" ]
+minversion = "9.0"
+pythonpath = [ "src" ]
+testpaths = [ "tests" ]
 
 [tool.dynamic_dependencies]
 require = "requires"

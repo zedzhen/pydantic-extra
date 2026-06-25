@@ -8,3 +8,17 @@ repos:
     rev: 26.5.1
     hooks:
       - id: black
+  - repo: https://github.com/tox-dev/pyproject-fmt
+    rev: v2.25.0
+    hooks:
+      - id: pyproject-fmt
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-toml
+      - id: check-case-conflict
+      - id: check-illegal-windows-names
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace

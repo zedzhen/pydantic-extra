@@ -25,4 +25,3 @@ msgstr "You are reviewing the documentation for an outdated version."
 #: docs/ext/old_version/__init__.py:15
 msgid "Документация для последней стабильной версии"
 msgstr "Documentation for the latest stable version"
-
