@@ -26,6 +26,7 @@ dev = [
     "pre-commit~=4.6",
     "pyproject-fmt~=2.25",
     { include-group = "test" },
+    { include-group = "types" },
 ]
 test = [
     "pytest~=9.0",
@@ -62,6 +63,9 @@ requires = [
 types = [
     "mypy~=2.1",
     "types-docutils~=0.22",
+    { include-group = "db" },
+    { include-group = "docs" },
+    { include-group = "requires" },
 ]
 
 [tool.black]
