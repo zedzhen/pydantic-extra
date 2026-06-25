@@ -1,3 +1,8 @@
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.absolute()))
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -18,12 +23,16 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_refs_alias.ext",
     "sphinx_deprecated_deleted.ext",
+    "ext.old_version",
 ]
 
 templates_path = ["_templates"]
 exclude_patterns = ["include/*"]
 
 language = "ru"
+
+# uncomment for an outdated version
+# rst_prolog = ".. old_version::"
 
 with open("include/epilog.rst", encoding="utf-8") as f:
     rst_epilog = f.read()

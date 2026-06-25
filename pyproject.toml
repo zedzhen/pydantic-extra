@@ -38,6 +38,7 @@ docs = [
     "sphinx-refs-alias~=2.0",
     "sphinx-deprecated-deleted~=1.1",
     "furo==2025.12.19",
+    "babel~=2.18",
 ]
 autodocs = [
     "sphinx-autobuild~=2025.8",

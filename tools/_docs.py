@@ -1,4 +1,5 @@
 import sys
+from functools import cached_property
 from itertools import chain
 
 from typing_extensions import Final
@@ -14,3 +15,24 @@ else:
     build_dir_lang = build_dir
     lang_args = ()
     langs_args = ()
+
+
+class ExtInfo:
+    def __init__(self, name: str):
+        self._name = name
+
+    @cached_property
+    def name(self) -> str:
+        return self._name
+
+    @cached_property
+    def dir(self) -> str:
+        return docs_dir + f"/ext/{self._name}"
+
+    @cached_property
+    def locales_dir(self):
+        return self.dir + "/locales"
+
+    @cached_property
+    def pot(self):
+        return self.locales_dir + f"{self._name}.pot"
