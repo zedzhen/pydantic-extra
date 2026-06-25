@@ -1,14 +1,13 @@
 from subprocess import run
 
-from __tools_init import chdir
-from _const import docs_dir
-from _docs import args, build_dir, lang_from_argv
+from __init import chdir
+from _docs import build_dir_lang, docs_dir, lang_args
 
 
-def main(lang: str | None) -> None:
+def main():
     with chdir:
-        run(["sphinx-autobuild", docs_dir, build_dir(lang), *args(lang)])
+        run(["sphinx-autobuild", docs_dir, build_dir_lang, *lang_args])
 
 
 if __name__ == "__main__":
-    main(lang_from_argv())
+    main()

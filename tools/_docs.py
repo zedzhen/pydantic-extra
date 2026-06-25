@@ -1,23 +1,16 @@
 import sys
+from itertools import chain
 
-from _const import build_dir as _build_dir
+from typing_extensions import Final
 
+docs_dir: Final[str] = "docs"
+build_dir: Final[str] = "build"
 
-def lang_from_argv() -> str | None:
-    if len(sys.argv) > 1:
-        return sys.argv[1]
-    return None
-
-
-def build_dir(lang: str | None) -> str:
-    if lang is None:
-        return _build_dir
-    else:
-        return f"{_build_dir}/{lang}"
-
-
-def args(lang: str | None) -> list[str]:
-    if lang is None:
-        return []
-    else:
-        return ["-D", f"language={lang}"]
+if len(sys.argv) > 1:
+    build_dir_lang = f"{build_dir}/{sys.argv[1]}"
+    lang_args = ("-D", f"language={sys.argv[1]}")
+    langs_args = tuple(chain(*(("-l", arg) for arg in sys.argv[1:])))
+else:
+    build_dir_lang = build_dir
+    lang_args = ()
+    langs_args = ()

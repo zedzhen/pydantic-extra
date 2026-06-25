@@ -1,7 +1,7 @@
 from subprocess import run
 
-from __tools_init import chdir
-from _const import build_dir, docs_dir
+from __init import chdir
+from _docs import build_dir, docs_dir
 
 
 def main():
