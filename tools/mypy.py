@@ -7,7 +7,7 @@ MIN_VERSION = {
     "tools/mypy_docs.toml": 12,
     "tools/mypy_src.toml": 10,
 }
-MAX_VERSION = 15
+MAX_VERSION = 14
 
 FAST = {file: [f"3.{version}"] for file, version in MIN_VERSION.items()}
 FULL = {
