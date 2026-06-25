@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-06-22 22:03+0300\n"
+"POT-Creation-Date: 2026-06-25 15:58+0300\n"
 "PO-Revision-Date: 2026-06-22 21:45+0300\n"
 "Last-Translator: Ярыкин Евгений <pypi@zedzhen.ru>\n"
 "Language: en\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: docs/ext/old_version/__init__.py:14
+#: docs/ext/old_version/__init__.py:16
 msgid "Вы просматриваете документацию для устаревшей версии."
 msgstr "You are reviewing the documentation for an outdated version."
 
-#: docs/ext/old_version/__init__.py:15
+#: docs/ext/old_version/__init__.py:17
 msgid "Документация для последней стабильной версии"
 msgstr "Documentation for the latest stable version"

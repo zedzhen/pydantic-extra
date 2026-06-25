@@ -8,3 +8,4 @@ API pydantic-extra
     db_base
     db
     adb
+    enums

@@ -22,3 +22,9 @@ Configuring the connection to the SMTP server.
 Настройка подключения к базам данных (в т.ч. в asyncio программах).
 
 Configuring connection to databases (including in asyncio programs).
+
+## pydantic_extra.enums
+
+Enum с валидацией по имени.
+
+Enum with name validation.

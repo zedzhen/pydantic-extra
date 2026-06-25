@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pydantic-extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-25 11:28+0300\n"
-"PO-Revision-Date: 2026-06-25 11:30+0300\n"
+"POT-Creation-Date: 2026-06-25 15:57+0300\n"
+"PO-Revision-Date: 2026-06-25 16:13+0300\n"
 "Last-Translator: Ярыкин Евгений <pypi@zedzhen.ru>\n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -164,17 +164,57 @@ msgstr "Use :py:class:`~.MySQL`."
 msgid "_db (базовые классы для `db` и `adb`)"
 msgstr "_db (base classes for `db` and `adb`)"
 
-#: ../../docs/api/db_base.rst:14
+#: ../../docs/api/db_base.rst:16
 msgid "Добавляет параметр наследования `default_library`."
 msgstr "Adds the inheritance parameter `default_library`."
 
-#: ../../docs/api/db_base.rst:16
+#: ../../docs/api/db_base.rst:18
 msgid ""
 ":py:attr:`!_library` класса и :py:attr:`!library` экземпляра имеют значение по умолчанию равное "
 "`default_library`."
 msgstr ""
 ":py:attr:`!_library` of the class and :py:attr:`!library` of the instance have a default value of "
 "`default_library`."
+
+#: ../../docs/api/enums.rst:2
+msgid "enums"
+msgstr "enums"
+
+#: ../../docs/api/enums.rst:10
+msgid "Аннотирование Enum для валидации по имени."
+msgstr "Class for Annotated the Enum for name validation."
+
+#: ../../docs/api/enums.rst:12
+msgid ""
+"Если ``ignore_case`` True, то сравнения происходят в нижнем регистре (если несколько элементов "
+"совпадают, то возвращается любой)."
+msgstr ""
+"If ``ignore_case`` is True, then comparisons occur in lowercase (if several elements match, then any one "
+"is returned)."
+
+#: ../../docs/api/enums.rst:15
+msgid ""
+"``forbidden_keys`` коллекция с игрнорируемыми ключами. Если ``ignore_case`` True, то сравнение с "
+"``forbidden_keys`` также происходят в нижнем регистре."
+msgstr ""
+"``forbidden_keys`` is a collection with ignored keys. If `ignore_case`` is True, then the comparison "
+"with ``forbidden_keys`` also occurs in lowercase."
+
+#: ../../docs/api/enums.rst:18 ../../docs/api/enums.rst:29
+msgid "Примеры:"
+msgstr "Examples:"
+
+#: ../../docs/api/enums.rst:25
+msgid "Класс примесь для Enum для валидации по имени."
+msgstr "An Enum mixin class for name validation."
+
+#: ../../docs/api/enums.rst:27
+msgid ""
+"Параметры наследования: `ignore_case` и `forbidden_keys`. Типы и значения "
+"аналогичны :py:class:`EnumByNameAnnotate`."
+msgstr ""
+"Inheritance parameters: `ignore_case` and `forbidden_keys`. The types and values are similar "
+"to :py:class:`EnumByNameAnnotate`."
 
 #: ../../docs/api/index.rst:2
 msgid "API pydantic-extra"
