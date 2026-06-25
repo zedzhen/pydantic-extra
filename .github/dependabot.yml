@@ -11,8 +11,13 @@ updates:
     schedule:
       interval: "daily"
       timezone: "Europe/Moscow"
+    ignore:
+      - dependency-name: "sphinx-autobuild"
+        version: [ "<2025.8" ]
+      - dependency-name: "Sphinx"
+        version: [ "<9" ]
 
-  - package-ecosystem: pre-commit
+  - package-ecosystem: "pre-commit"
     directory: "/"
     schedule:
       interval: "daily"
