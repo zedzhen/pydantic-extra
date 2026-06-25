@@ -2,8 +2,7 @@ __all__ = ["MailServer"]
 
 from smtplib import SMTP, SMTP_SSL
 
-from pydantic import BaseModel, SecretStr, model_validator
-from typing_extensions import Self
+from pydantic import BaseModel, Field, SecretStr
 
 
 class MailServer(BaseModel):
@@ -12,13 +11,7 @@ class MailServer(BaseModel):
     smtp_ssl: bool = True
     smtp_login: str
     smtp_password: SecretStr
-    from_addr: str = None
-
-    @model_validator(mode="after")
-    def checks(self) -> Self:
-        if self.from_addr is None:
-            self.from_addr = self.smtp_login
-        return self
+    from_addr: str = Field(default_factory=lambda data: data["smtp_login"])
 
     def connect(self) -> SMTP:
         """Возвращает объект smtplib.SMTP с указанным адресом"""

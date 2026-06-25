@@ -28,9 +28,8 @@ smtp
 
   .. py:attribute:: from_addr
     :type: str
-    :value: None
 
-    Если равно :py:obj:`None`, присваивается значение :py:attr:`smtp_login`
+    По умолчанию :py:attr:`smtp_login`.
 
 
   .. py:method:: connect() -> smtplib.SMTP
