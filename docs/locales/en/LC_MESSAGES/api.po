@@ -7,19 +7,18 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pydantic-extra\n"
+"Project-Id-Version:  pydantic-extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-25 11:28+0300\n"
+"POT-Creation-Date: 2026-06-25 15:57+0300\n"
 "PO-Revision-Date: 2026-06-25 11:30+0300\n"
 "Last-Translator: Ярыкин Евгений <pypi@zedzhen.ru>\n"
-"Language-Team: en <LL@li.org>\n"
 "Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
-"X-Generator: Poedit 3.9\n"
 
 #: ../../docs/api/adb.rst:2
 msgid "adb"
@@ -34,8 +33,12 @@ msgid "Базовый класс для конфигурации базы дан
 msgstr "The base class for database configuration"
 
 #: ../../docs/api/adb.rst:21
-msgid "строка для :py:func:`sqlalchemy.ext.asyncio.create_async_engine` (может быть |cached_property|)"
-msgstr "string for :py:func:`sqlalchemy.ext.asyncio.create_async_engine` (maybe |cached_property|)"
+msgid ""
+"строка для :py:func:`sqlalchemy.ext.asyncio.create_async_engine` (может "
+"быть |cached_property|)"
+msgstr ""
+"string for :py:func:`sqlalchemy.ext.asyncio.create_async_engine` (maybe "
+"|cached_property|)"
 
 #: ../../docs/api/adb.rst:26
 msgid "Создаёт :py:class:`sqlalchemy.AsyncEngine` (может быть |cached_property|)"
@@ -46,8 +49,12 @@ msgid "Создаёт :py:class:`sqlalchemy.AsyncSession`"
 msgstr "Creates :py:class:`sqlalchemy.AsyncSession`"
 
 #: ../../docs/api/adb.rst:34
-msgid "Настраивает экземпляр :py:class:`sqlalchemy.AsyncEngine` для работы с данным диалектом"
-msgstr "Configures an instance of :py:class:`sqlalchemy.AsyncEngine` for working with this dialect"
+msgid ""
+"Настраивает экземпляр :py:class:`sqlalchemy.AsyncEngine` для работы с "
+"данным диалектом"
+msgstr ""
+"Configures an instance of :py:class:`sqlalchemy.AsyncEngine` for working "
+"with this dialect"
 
 #: ../../docs/api/adb.rst:36 ../../docs/api/db.rst:42
 msgid ":py:meth:`~.engine` применяет данный метод."
@@ -55,9 +62,11 @@ msgstr ":py:meth:`~.engine` applies this method."
 
 #: ../../docs/api/adb.rst:40 ../../docs/api/adb.rst:52
 msgid ""
-"Базовые "
-"классы: :py:class:`~pydantic_extra.adb.AsyncDB`, :py:class:`~pydantic_extra._db.CustomLibraryMixin`"
-msgstr "Bases: :py:class:`~pydantic_extra.adb.AsyncDB`, :py:class:`~pydantic_extra._db.CustomLibraryMixin`"
+"Базовые классы: :py:class:`~pydantic_extra.adb.AsyncDB`, "
+":py:class:`~pydantic_extra._db.CustomLibraryMixin`"
+msgstr ""
+"Bases: :py:class:`~pydantic_extra.adb.AsyncDB`, "
+":py:class:`~pydantic_extra._db.CustomLibraryMixin`"
 
 #: ../../docs/include/api/db/sqlite.rst:1
 msgid "Конфигурация для базы данных SQLite"
@@ -120,7 +129,9 @@ msgid "db"
 msgstr "db"
 
 #: ../../docs/api/db.rst:19
-msgid "строка для :py:func:`sqlalchemy.create_engine` (может быть |cached_property|)"
+msgid ""
+"строка для :py:func:`sqlalchemy.create_engine` (может быть "
+"|cached_property|)"
 msgstr "string for :py:func:`sqlalchemy.create_engine` (maybe |cached_property|)"
 
 #: ../../docs/api/db.rst:24
@@ -132,16 +143,24 @@ msgid "Создаёт :py:class:`sqlalchemy.orm.Session`"
 msgstr "Creates :py:class:`sqlalchemy.orm.Session`"
 
 #: ../../docs/api/db.rst:32
-msgid "Настраивает `SQLAlchemy <https://docs.sqlalchemy.org/en/20/>`_ для работы с данным диалектом"
-msgstr "Configures `SQLAlchemy <https://docs.sqlalchemy.org/en/20/>`_ for working with this dialect"
+msgid ""
+"Настраивает `SQLAlchemy <https://docs.sqlalchemy.org/en/20/>`_ для работы"
+" с данным диалектом"
+msgstr ""
+"Configures `SQLAlchemy <https://docs.sqlalchemy.org/en/20/>`_ for working"
+" with this dialect"
 
 #: ../../docs/api/db.rst:36
 msgid "Используйте :py:meth:`~.setup_engine`."
 msgstr "Use :py:meth:`~.setup_engine`."
 
 #: ../../docs/api/db.rst:40
-msgid "Настраивает экземпляр :py:class:`sqlalchemy.Engine` для работы с данным диалектом."
-msgstr "Configures an instance of :py:class:`sqlalchemy.Engine` for working with this dialect."
+msgid ""
+"Настраивает экземпляр :py:class:`sqlalchemy.Engine` для работы с данным "
+"диалектом."
+msgstr ""
+"Configures an instance of :py:class:`sqlalchemy.Engine` for working with "
+"this dialect."
 
 #: ../../docs/api/db.rst:51 ../../docs/api/db.rst:77
 msgid "Базовые классы: :py:class:`~pydantic_extra.db.DB`"
@@ -149,8 +168,11 @@ msgstr "Bases: :py:class:`~pydantic_extra.db.DB`"
 
 #: ../../docs/api/db.rst:57
 msgid ""
-"Базовые классы: :py:class:`~pydantic_extra.db.DB`, :py:class:`~pydantic_extra._db.CustomLibraryMixin`"
-msgstr "Bases: :py:class:`~pydantic_extra.db.DB`, :py:class:`~pydantic_extra._db.CustomLibraryMixin`"
+"Базовые классы: :py:class:`~pydantic_extra.db.DB`, "
+":py:class:`~pydantic_extra._db.CustomLibraryMixin`"
+msgstr ""
+"Bases: :py:class:`~pydantic_extra.db.DB`, "
+":py:class:`~pydantic_extra._db.CustomLibraryMixin`"
 
 #: ../../docs/api/db.rst:69
 msgid "Алиас для :py:class:`~.MySQL`."
@@ -164,17 +186,52 @@ msgstr "Use :py:class:`~.MySQL`."
 msgid "_db (базовые классы для `db` и `adb`)"
 msgstr "_db (base classes for `db` and `adb`)"
 
-#: ../../docs/api/db_base.rst:14
+#: ../../docs/api/db_base.rst:16
 msgid "Добавляет параметр наследования `default_library`."
 msgstr "Adds the inheritance parameter `default_library`."
 
-#: ../../docs/api/db_base.rst:16
+#: ../../docs/api/db_base.rst:18
 msgid ""
-":py:attr:`!_library` класса и :py:attr:`!library` экземпляра имеют значение по умолчанию равное "
-"`default_library`."
+":py:attr:`!_library` класса и :py:attr:`!library` экземпляра имеют "
+"значение по умолчанию равное `default_library`."
 msgstr ""
-":py:attr:`!_library` of the class and :py:attr:`!library` of the instance have a default value of "
-"`default_library`."
+":py:attr:`!_library` of the class and :py:attr:`!library` of the instance"
+" have a default value of `default_library`."
+
+#: ../../docs/api/enums.rst:2
+msgid "enums"
+msgstr ""
+
+#: ../../docs/api/enums.rst:10
+msgid "Аннотирование Enum для валидации по имени."
+msgstr ""
+
+#: ../../docs/api/enums.rst:12
+msgid ""
+"Если ``ignore_case`` True, то сравнения происходят в нижнем регистре "
+"(если несколько элементов совпадают, то возвращается любой)."
+msgstr ""
+
+#: ../../docs/api/enums.rst:15
+msgid ""
+"``forbidden_keys`` коллекция с игрнорируемыми ключами. Если "
+"``ignore_case`` True, то сравнение с ``forbidden_keys`` также происходят "
+"в нижнем регистре."
+msgstr ""
+
+#: ../../docs/api/enums.rst:18 ../../docs/api/enums.rst:29
+msgid "Примеры:"
+msgstr ""
+
+#: ../../docs/api/enums.rst:25
+msgid "Класс примесь для Enum для валидации по имени."
+msgstr ""
+
+#: ../../docs/api/enums.rst:27
+msgid ""
+"Параметры наследования: `ignore_case` и `forbidden_keys`. Типы и значения"
+" аналогичны :py:class:`EnumByNameAnnotate`."
+msgstr ""
 
 #: ../../docs/api/index.rst:2
 msgid "API pydantic-extra"
