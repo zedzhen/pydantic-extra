@@ -4,7 +4,7 @@ from __init import chdir
 from _docs import ExtInfo, build_dir, docs_dir, langs_args
 
 
-def _ext(name: str):
+def _ext(name: str) -> None:
     info = ExtInfo(name)
     run(
         [
@@ -22,7 +22,7 @@ def _ext(name: str):
     )
 
 
-def main():
+def main() -> None:
     with chdir:
         run(["sphinx-intl", "update", "-p", f"{build_dir}/gettext", "-d", f"{docs_dir}/locales", *langs_args])
         _ext("old_version")

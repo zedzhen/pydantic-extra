@@ -15,6 +15,7 @@ class MailServer(BaseModel):
 
     def connect(self) -> SMTP:
         """Возвращает объект smtplib.SMTP с указанным адресом"""
+        cls: type[SMTP]
         if self.smtp_ssl:
             cls = SMTP_SSL
         else:

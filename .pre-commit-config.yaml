@@ -12,6 +12,7 @@ repos:
     rev: v2.25.0
     hooks:
       - id: pyproject-fmt
+        files: (^|/)(pyproject|mypy_\w+)\.toml$
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
@@ -22,3 +23,18 @@ repos:
       - id: end-of-file-fixer
       - id: mixed-line-ending
       - id: trailing-whitespace
+  - repo: local
+    hooks:
+      - id: mypy
+        name: MyPy
+        types: [python]
+        language: python
+        pass_filenames: false
+        entry: python3 tools/mypy.py --fast
+        additional_dependencies:
+          - types-docutils~=0.22
+          - mypy~=2.1
+          - sphinx~=9.0
+          - pydantic~=2.10
+          - typing-extensions~=4.14
+          - sqlalchemy~=2.0

@@ -4,7 +4,7 @@ from __init import chdir
 from _docs import build_dir_lang, docs_dir, lang_args
 
 
-def main():
+def main() -> None:
     with chdir:
         run(["sphinx-autobuild", docs_dir, build_dir_lang, *lang_args])
 

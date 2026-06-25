@@ -38,6 +38,7 @@ class AsyncSQLite(SQLiteBase, AsyncDB, CustomLibraryMixin, default_library="aios
         """строка для sqlalchemy.ext.asyncio.create_async_engine"""
         return URL.create(f"sqlite+{self.library}", database=str(self.path.absolute()))
 
+    @override
     def setup_engine(self, engine: AsyncEngine) -> AsyncEngine:
         """Настраивает экземпляр sqlalchemy.ext.asyncio.AsyncEngine для работы с sqlite"""
         event.listen(engine.sync_engine, "connect", self._set_pragma)

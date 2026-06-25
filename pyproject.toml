@@ -59,6 +59,10 @@ requires = [
     "pydantic~=2.10",
     "typing-extensions~=4.14",
 ]
+types = [
+    "mypy~=2.1",
+    "types-docutils~=0.22",
+]
 
 [tool.black]
 line-length = 120

@@ -2,10 +2,12 @@ from pathlib import Path
 
 from babel.messages.mofile import write_mo
 from babel.messages.pofile import read_po
+from docutils.nodes import Node
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util.docutils import SphinxDirective
 from sphinx.util.typing import ExtensionMetadata
+from typing_extensions import override
 
 ext_name = Path(__file__).parent.name
 
@@ -23,7 +25,8 @@ _TEXT = """
 
 
 class ViewLatest(SphinxDirective):
-    def run(self):
+    @override
+    def run(self) -> list[Node]:
         return self.parse_text_to_nodes(_TEXT.format(info=_TEXT_INFO, link=_TEXT_LINK, lang=self.config.language))
 
 

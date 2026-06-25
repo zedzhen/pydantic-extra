@@ -1,6 +1,6 @@
 __all__ = ["CustomLibraryMixin"]
 
-from abc import ABC, abstractmethod
+from abc import ABC
 from functools import cached_property
 from pathlib import Path
 
@@ -8,7 +8,7 @@ from pydantic import Field, SecretStr
 from sqlalchemy import URL
 from sqlalchemy.engine.interfaces import DBAPIConnection
 from sqlalchemy.pool import ConnectionPoolEntry
-from typing_extensions import Literal
+from typing_extensions import Any, Literal, override
 
 
 class CustomLibraryMixin:
@@ -19,12 +19,14 @@ class CustomLibraryMixin:
         return self._library
 
     @library.setter
-    def library(self, value: str):
+    def library(self, value: str) -> None:
         self._library = value
 
-    def __init_subclass__(cls, default_library: str | None = None, **kwargs):
+    @override
+    def __init_subclass__(cls, default_library: str | None = None, **kwargs: Any) -> None:
         if default_library is not None:
             cls._library = default_library
+        super().__init_subclass__(**kwargs)
 
 
 class DBBase(ABC):
@@ -36,7 +38,7 @@ class SQLiteBase(DBBase, ABC):
     path: Path
 
     @staticmethod
-    def _set_pragma(dbapi_connection: DBAPIConnection, connection_record: ConnectionPoolEntry):
+    def _set_pragma(dbapi_connection: DBAPIConnection, connection_record: ConnectionPoolEntry) -> None:
         cursor = dbapi_connection.cursor()
         cursor.execute("PRAGMA foreign_keys=ON")
         dbapi_connection.commit()

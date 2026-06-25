@@ -42,6 +42,7 @@ class SQLite(SQLiteBase, DB):
         """строка для sqlalchemy.create_engine"""
         return URL.create("sqlite", database=str(self.path.absolute()))
 
+    @override
     def setup_engine(self, engine: Engine) -> Engine:
         """Настраивает экземпляр sqlalchemy.Engine для работы с sqlite"""
         event.listen(engine, "connect", self._set_pragma)
