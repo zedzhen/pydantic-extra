@@ -5,12 +5,16 @@ updates:
     schedule:
       interval: "daily"
       timezone: "Europe/Moscow"
+    assignees:
+      - zedzhen
 
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "daily"
       timezone: "Europe/Moscow"
+    assignees:
+      - zedzhen
     ignore:
       - dependency-name: "sphinx-autobuild"
         versions: [ "<2025.8" ]
@@ -22,3 +26,5 @@ updates:
     schedule:
       interval: "daily"
       timezone: "Europe/Moscow"
+    assignees:
+      - zedzhen
