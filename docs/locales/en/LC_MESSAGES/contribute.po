@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pydantic-extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 11:20+0300\n"
-"PO-Revision-Date: 2026-06-22 11:23+0300\n"
+"POT-Creation-Date: 2026-06-25 16:44+0300\n"
+"PO-Revision-Date: 2026-06-25 16:53+0300\n"
 "Last-Translator: Ярыкин Евгений <pypi@zedzhen.ru>\n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -46,10 +46,14 @@ msgid "Создайте и активируйте виртуальное окр�
 msgstr "Create and activate a virtual environment"
 
 #: ../../docs/contribute/index.rst:18
-msgid "Установите зависимости"
-msgstr "Install the dependencies"
+msgid ""
+"Установите зависимости (``dev`` основные зависимости, ``autodocs`` для сборки "
+"документации с автообновлением, ``lints`` для запуска линтеров вне коммита)"
+msgstr ""
+"Install the dependencies (``dev`` main dependencies, ``autodocs`` to build "
+"documentation with auto-update, ``lints`` to run linters outside the commit)"
 
-#: ../../docs/contribute/index.rst:24
+#: ../../docs/contribute/index.rst:25
 msgid "Установить хук pre-commit"
 msgstr "Install the pre-commit hook"
 
@@ -100,3 +104,11 @@ msgstr "tools/gen_pot.py"
 #: ../../docs/contribute/tools.rst:26
 msgid "Генерирует/обновляет pot файлы для документации."
 msgstr "Generates/updates pot files for documentation."
+
+#: ../../docs/contribute/tools.rst:29
+msgid "tools/mypy.py"
+msgstr "tools/mypy.py"
+
+#: ../../docs/contribute/tools.rst:30
+msgid "Запускает mypy."
+msgstr "Runs mypy."
