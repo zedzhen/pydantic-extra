@@ -24,6 +24,7 @@ extensions = [
     "sphinx_refs_alias.ext",
     "sphinx_deprecated_deleted.ext",
     "ext.old_version",
+    "ext.comment",
 ]
 
 templates_path = ["_templates"]
