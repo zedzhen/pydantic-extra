@@ -83,4 +83,10 @@ db
   :canonical: SQLite | MySQL | AnyDB
 
 
+Пример:
+-------
+
+.. literalinclude:: /_examples/db.py
+  :language: python
+
 .. include:: /include/api/db/epilog.rst

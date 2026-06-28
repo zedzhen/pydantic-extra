@@ -68,4 +68,10 @@ adb
 .. py:type:: T_AsyncDB
   :canonical: AsyncSQLite | AsyncMySQL | AsyncAnyDB
 
+Пример:
+-------
+
+.. literalinclude:: /_examples/adb.py
+  :language: python
+
 .. include:: /include/api/db/epilog.rst
