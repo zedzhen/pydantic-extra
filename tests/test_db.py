@@ -1,11 +1,12 @@
 import pytest
+from typing_extensions import Any
 
 pytest.importorskip(
     "sqlalchemy", "2.0.0", "skipping pydantic_extra.db tests (requires sqlalchemy)", exc_type=ModuleNotFoundError
 )
 from pathlib import Path
 
-from pydantic import TypeAdapter
+from pydantic import Field, RootModel, TypeAdapter
 from sqlalchemy import URL, Engine
 from sqlalchemy.orm import Session
 
@@ -22,6 +23,14 @@ except ModuleNotFoundError:
 ta = TypeAdapter(T_DB)
 
 
+class RootDB(RootModel[T_DB]):
+    root: T_DB = Field(discriminator="type")
+
+
+def root_model_validate(obj: Any, **kwargs):
+    return RootDB.model_validate(obj, **kwargs).root
+
+
 def _base_test(obj: DB, test_engine: bool):
     assert isinstance(obj.connect_str, (str, URL))
     if test_engine:
@@ -29,7 +38,7 @@ def _base_test(obj: DB, test_engine: bool):
         assert isinstance(obj.session(), Session)
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, SQLite.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, SQLite.model_validate, root_model_validate])
 def test_sqlite(func):
     data = {
         "type": "sqlite",
@@ -42,7 +51,7 @@ def test_sqlite(func):
     _base_test(obj, True)
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, MySQL.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, MySQL.model_validate, root_model_validate])
 @pytest.mark.parametrize("type_", ["mysql", "mariadb"])
 def test_mysql(func, type_):
     data = {
@@ -71,7 +80,7 @@ def test_mysql_skip():
     pass
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, MySQL.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, MySQL.model_validate, root_model_validate])
 @pytest.mark.parametrize("type_", ["mysql", "mariadb"])
 def test_mysql_default(func, type_):
     data = {
@@ -93,7 +102,7 @@ def test_mysql_default(func, type_):
     _base_test(obj, AVAILABLE_PYMYSQL)
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, AnyDB.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, AnyDB.model_validate, root_model_validate])
 def test_anydb(func):
     data = {
         "type": "any",

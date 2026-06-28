@@ -3,7 +3,6 @@ __all__ = ["AsyncDB", "AsyncSQLite", "AsyncMySQL", "AsyncAnyDB", "T_AsyncDB"]
 from abc import ABC, abstractmethod
 from functools import cached_property
 
-from pydantic import BaseModel
 from sqlalchemy import URL, event
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, create_async_engine
 from typing_extensions import TypeAlias, override
@@ -11,8 +10,8 @@ from typing_extensions import TypeAlias, override
 from pydantic_extra._db import AnyBase, CustomLibraryMixin, DBBase, MysqlBase, SQLiteBase
 
 
-class AsyncDB(BaseModel, DBBase, ABC):
-    @cached_property
+class AsyncDB(DBBase, ABC):
+    @property
     @abstractmethod
     def connect_str(self) -> str | URL:
         """строка для sqlalchemy.ext.asyncio.create_async_engine"""

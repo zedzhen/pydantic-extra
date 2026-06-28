@@ -1,10 +1,9 @@
 __all__ = ["CustomLibraryMixin"]
 
-from abc import ABC
 from functools import cached_property
 from pathlib import Path
 
-from pydantic import Field, SecretStr
+from pydantic import BaseModel, Field, SecretStr
 from sqlalchemy import URL
 from sqlalchemy.engine.interfaces import DBAPIConnection
 from sqlalchemy.pool import ConnectionPoolEntry
@@ -29,11 +28,11 @@ class CustomLibraryMixin:
         super().__init_subclass__(**kwargs)
 
 
-class DBBase(ABC):
+class DBBase(BaseModel):
     type: str
 
 
-class SQLiteBase(DBBase, ABC):
+class SQLiteBase(DBBase):
     type: Literal["sqlite"]
     path: Path
 
@@ -45,7 +44,7 @@ class SQLiteBase(DBBase, ABC):
         cursor.close()
 
 
-class MysqlBase(DBBase, CustomLibraryMixin, ABC):
+class MysqlBase(DBBase, CustomLibraryMixin):
     type: Literal["mysql", "mariadb"]
     host: str
     port: int = 3306

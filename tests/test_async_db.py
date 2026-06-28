@@ -1,12 +1,13 @@
 import pytest
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession
+from typing_extensions import Any
 
 pytest.importorskip(
     "sqlalchemy", "2.0.0", "skipping pydantic_extra.adb tests (requires sqlalchemy)", exc_type=ModuleNotFoundError
 )
 from pathlib import Path
 
-from pydantic import TypeAdapter
+from pydantic import Field, RootModel, TypeAdapter
 from sqlalchemy import URL
 
 from pydantic_extra.adb import AsyncAnyDB, AsyncDB, AsyncMySQL, AsyncSQLite, T_AsyncDB
@@ -30,6 +31,14 @@ except ModuleNotFoundError:
 ta = TypeAdapter(T_AsyncDB)
 
 
+class RootADB(RootModel[T_AsyncDB]):
+    root: T_AsyncDB = Field(discriminator="type")
+
+
+def root_model_validate(obj: Any, **kwargs):
+    return RootADB.model_validate(obj, **kwargs).root
+
+
 def _base_test(obj: AsyncDB, test_engine: bool):
     assert isinstance(obj.connect_str, (str, URL))
     if test_engine:
@@ -37,7 +46,7 @@ def _base_test(obj: AsyncDB, test_engine: bool):
         assert isinstance(obj.session(), AsyncSession)
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, AsyncSQLite.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, AsyncSQLite.model_validate, root_model_validate])
 def test_sqlite(func):
     data = {
         "type": "sqlite",
@@ -56,7 +65,7 @@ def test_sqlite_skip():
     pass
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, AsyncMySQL.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, AsyncMySQL.model_validate, root_model_validate])
 @pytest.mark.parametrize("type_", ["mysql", "mariadb"])
 def test_mysql(func, type_):
     data = {
@@ -85,7 +94,7 @@ def test_mysql_skip():
     pass
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, AsyncMySQL.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, AsyncMySQL.model_validate, root_model_validate])
 @pytest.mark.parametrize("type_", ["mysql", "mariadb"])
 def test_mysql_default(func, type_):
     data = {
@@ -107,7 +116,7 @@ def test_mysql_default(func, type_):
     _base_test(obj, AVAILABLE_AIOMYSQL)
 
 
-@pytest.mark.parametrize("func", [ta.validate_python, AsyncAnyDB.model_validate])
+@pytest.mark.parametrize("func", [ta.validate_python, AsyncAnyDB.model_validate, root_model_validate])
 def test_anydb(func):
     data = {
         "type": "any",

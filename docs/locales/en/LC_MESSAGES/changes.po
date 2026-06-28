@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pydantic-extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-27 15:20+0300\n"
-"PO-Revision-Date: 2026-06-27 15:21+0300\n"
+"POT-Creation-Date: 2026-06-28 18:23+0300\n"
+"PO-Revision-Date: 2026-06-28 18:24+0300\n"
 "Last-Translator: Ярыкин Евгений <pypi@zedzhen.ru>\n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -33,35 +33,39 @@ msgstr "Unreleased"
 msgid "Пока нет изменений"
 msgstr "There are no changes yet"
 
-#: ../../docs/changes.rst:14
+#: ../../docs/changes.rst:11
+msgid "Исправлен баг при использовании ``pydantic.Field(discriminator=\"type\")``"
+msgstr "Fixed a bug when using ``pydantic.Field(discriminator=\"type\")``"
+
+#: ../../docs/changes.rst:16
 msgid "1.2.1 (27.06.2026)"
 msgstr "1.2.1 (27.06.2026)"
 
-#: ../../docs/changes.rst:16
+#: ../../docs/changes.rst:18
 msgid "Добавлен файл py.typed"
 msgstr "Add file py.typed"
 
-#: ../../docs/changes.rst:21
+#: ../../docs/changes.rst:23
 msgid "1.2.0 (25.06.2026)"
 msgstr "1.2.0 (25.06.2026)"
 
-#: ../../docs/changes.rst:23
+#: ../../docs/changes.rst:25
 msgid "Обновлены зависимости"
 msgstr "Update dependencies"
 
-#: ../../docs/changes.rst:24
+#: ../../docs/changes.rst:26
 msgid "Добавлен Enum с валидацией по имени :gh:`11` :py:mod:`pydantic_extra.enums`"
 msgstr "Added an Enum with name validation :gh:`11` :py:mod:`pydantic_extra.enums`"
 
-#: ../../docs/changes.rst:29
+#: ../../docs/changes.rst:31
 msgid "1.1.0 (22.06.2026)"
 msgstr "1.1.0 (22.06.2026)"
 
-#: ../../docs/changes.rst:32
+#: ../../docs/changes.rst:34
 msgid "Новые функции"
 msgstr "New features"
 
-#: ../../docs/changes.rst:34
+#: ../../docs/changes.rst:36
 msgid ""
 "Новый метод :py:meth:`pydantic_extra.db.DB.setup_engine`. Он настраивает "
 "конкретный экземпляр :py:class:`sqlalchemy.Engine`."
@@ -69,26 +73,26 @@ msgstr ""
 "New method :py:meth:`pydantic_extra.db.DB.setup_engine`. It sets up a specific "
 "instance :py:class:`sqlalchemy.Engine`."
 
-#: ../../docs/changes.rst:36
+#: ../../docs/changes.rst:38
 msgid ""
 "Добавлена поддержка альтернативных библиотек "
 "для :py:class:`~pydantic_extra.db.MySQL`"
 msgstr ""
 "Added support for alternative libraries for :py:class:`~pydantic_extra.db.MySQL`"
 
-#: ../../docs/changes.rst:37
+#: ../../docs/changes.rst:39
 msgid "Добавлена поддержка асинхронного использования баз данных :gh:`1`"
 msgstr "Added support for asynchronous database usage :gh:`1`"
 
-#: ../../docs/changes.rst:38
+#: ../../docs/changes.rst:40
 msgid "Новые группы зависимостей ``db_full``, ``adb_full``, ``full``"
 msgstr "New dependency groups `db_full`, `adb_full\", `full`"
 
-#: ../../docs/changes.rst:41
+#: ../../docs/changes.rst:43
 msgid "Устаревшие функции"
 msgstr "Outdated functions"
 
-#: ../../docs/changes.rst:43
+#: ../../docs/changes.rst:45
 msgid ""
 "Метод :py:meth:`pydantic_extra.db.DB.setup` устарел и будет удалён в версии 2.0. "
 "Используйте :py:meth:`pydantic_extra.db.DB.setup_engine`."
@@ -96,42 +100,42 @@ msgstr ""
 "Method :py:meth:`pydantic_extra.db.DB.setup` is deprecated and will be removed "
 "in version 2.0. Use :py:meth:`pydantic_extra.db.DB.setup_engine`."
 
-#: ../../docs/changes.rst:45
+#: ../../docs/changes.rst:47
 msgid "Удалена поддержка python 3.8, 3.9"
 msgstr "Removed support for python 3.8, 3.9"
 
-#: ../../docs/changes.rst:48
+#: ../../docs/changes.rst:50
 msgid "Другое"
 msgstr "Other"
 
-#: ../../docs/changes.rst:50
+#: ../../docs/changes.rst:52
 msgid "Обновление зависимостей"
 msgstr "Updating dependencies"
 
-#: ../../docs/changes.rst:51
+#: ../../docs/changes.rst:53
 msgid "Улучшены подсказки типов"
 msgstr "Improved type hints"
 
-#: ../../docs/changes.rst:52
+#: ../../docs/changes.rst:54
 msgid "Добавлены тесты"
 msgstr "Added tests"
 
-#: ../../docs/changes.rst:53
+#: ../../docs/changes.rst:55
 msgid "Добавлена документация"
 msgstr "Added documentation"
 
-#: ../../docs/changes.rst:58
+#: ../../docs/changes.rst:60
 msgid "1.0.2 (27.05.2026)"
 msgstr "1.0.2 (27.05.2026)"
 
-#: ../../docs/changes.rst:60
+#: ../../docs/changes.rst:62
 msgid "обновление зависимостей"
 msgstr "update dependencies"
 
-#: ../../docs/changes.rst:65
+#: ../../docs/changes.rst:67
 msgid "1.0.0 (28.12.2024)"
 msgstr "1.0.0 (28.12.2024)"
 
-#: ../../docs/changes.rst:67
+#: ../../docs/changes.rst:69
 msgid "Первый релиз"
 msgstr "The first release"
