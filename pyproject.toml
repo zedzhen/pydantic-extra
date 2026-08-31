@@ -20,7 +20,7 @@ source = "https://github.com/zedzhen/pydantic-extra"
 
 [dependency-groups]
 dev = [
-    "build==1.5.*",
+    "build>=1.5,<1.7",
     "pre-commit~=4.6",
     { include-group = "test" },
 ]
