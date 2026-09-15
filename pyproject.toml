@@ -55,7 +55,7 @@ full = [
 lints = [
     "autoflake~=2.3",
     "black~=26.5",
-    "isort~=8.0",
+    "isort>=8,<10",
     "pyproject-fmt~=2.25",
     { include-group = "types" },
 ]
